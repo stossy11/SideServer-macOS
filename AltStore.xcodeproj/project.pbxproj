@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0380808828C6E03800C653E1 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = 0380808728C6E03800C653E1 /* userpref.c */; };
+		0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
+		03C6DA9828C6E2AC002B2779 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = 0380808928C6E03900C653E1 /* userpref.h */; };
 		B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FB284F3B2400DA9E2F /* Sparkle */; };
 		B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FE284F3C0900DA9E2F /* STPrivilegedTask */; };
 		BF0241AA22F29CCD00129732 /* UserDefaults+AltServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0241A922F29CCD00129732 /* UserDefaults+AltServer.swift */; };
@@ -81,7 +84,6 @@
 		BF4588402298D3F800BD7491 /* collection.h in Headers */ = {isa = PBXBuildFile; fileRef = BF45883E2298D3F800BD7491 /* collection.h */; };
 		BF4588412298D3F800BD7491 /* collection.c in Sources */ = {isa = PBXBuildFile; fileRef = BF45883F2298D3F800BD7491 /* collection.c */; };
 		BF4588432298D40000BD7491 /* libusbmuxd.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4588422298D40000BD7491 /* libusbmuxd.c */; };
-		BF4588472298D4B000BD7491 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
 		BF45884A2298D55000BD7491 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4588482298D55000BD7491 /* thread.c */; };
 		BF45884B2298D55000BD7491 /* thread.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4588492298D55000BD7491 /* thread.h */; };
 		BF541C0B25E5A5FA00CD46B2 /* FileManager+URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF541C0A25E5A5FA00CD46B2 /* FileManager+URLs.swift */; };
@@ -151,7 +153,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF4588442298D48B00BD7491 /* PBXContainerItemProxy */ = {
+		0380808B28C6E10300C653E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFD247622284B9A500981D42 /* Project object */;
 			proxyType = 1;
@@ -203,6 +205,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0380808728C6E03800C653E1 /* userpref.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = userpref.c; sourceTree = SOURCE_ROOT; };
+		0380808928C6E03900C653E1 /* userpref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userpref.h; sourceTree = SOURCE_ROOT; };
 		B3146EC5284F57EF00BBC3FD /* AltSign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AltSign; path = Dependencies/AltSign; sourceTree = "<group>"; };
 		B3C39606284F4C8400DA9E2F /* CodeSigning.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B3C39607284F4C8400DA9E2F /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
@@ -387,8 +391,8 @@
 				D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */,
 				B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */,
 				BF088D382501A833008082D9 /* OpenSSL.xcframework in Frameworks */,
+				0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */,
 				B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */,
-				BF4588472298D4B000BD7491 /* libimobiledevice.a in Frameworks */,
 				BF088D362501A821008082D9 /* AltSign-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +489,8 @@
 			children = (
 				BF4588282298D3B400BD7491 /* common */,
 				BF4587D72298D3A800BD7491 /* afc.c */,
+				0380808728C6E03800C653E1 /* userpref.c */,
+				0380808928C6E03900C653E1 /* userpref.h */,
 				BF4587EC2298D3AA00BD7491 /* afc.h */,
 				BF4587DF2298D3A900BD7491 /* debugserver.c */,
 				BF4587DE2298D3A900BD7491 /* debugserver.h */,
@@ -791,6 +797,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4588112298D3AB00BD7491 /* misagent.h in Headers */,
+				03C6DA9828C6E2AC002B2779 /* userpref.h in Headers */,
 				BF4588042298D3AB00BD7491 /* lockdown.h in Headers */,
 				BF4588402298D3F800BD7491 /* collection.h in Headers */,
 				BF45880B2298D3AB00BD7491 /* mobilesync.h in Headers */,
@@ -849,8 +856,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				BF4588452298D48B00BD7491 /* PBXTargetDependency */,
 				BFF7C90E257844C900E55F36 /* PBXTargetDependency */,
+				0380808C28C6E10300C653E1 /* PBXTargetDependency */,
 			);
 			name = AltServer;
 			packageProductDependencies = (
@@ -1113,6 +1120,7 @@
 				BFD52C1722A1A9CB000B7ED1 /* Key.cpp in Sources */,
 				BF45880D2298D3AB00BD7491 /* mobilebackup.c in Sources */,
 				BFD52C0C22A1A9CB000B7ED1 /* Date.cpp in Sources */,
+				0380808828C6E03800C653E1 /* userpref.c in Sources */,
 				BFD52C0A22A1A9CB000B7ED1 /* plist.c in Sources */,
 				BFD52C1322A1A9CB000B7ED1 /* Data.cpp in Sources */,
 				BF45883A2298D3C100BD7491 /* debug.c in Sources */,
@@ -1168,10 +1176,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF4588452298D48B00BD7491 /* PBXTargetDependency */ = {
+		0380808C28C6E10300C653E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BF45872A2298D31600BD7491 /* libimobiledevice */;
-			targetProxy = BF4588442298D48B00BD7491 /* PBXContainerItemProxy */;
+			targetProxy = 0380808B28C6E10300C653E1 /* PBXContainerItemProxy */;
 		};
 		BFF7C90E257844C900E55F36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1203,7 +1211,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEVELOPMENT_TEAM = A72ZC8AJ5X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1257,7 +1265,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEVELOPMENT_TEAM = A72ZC8AJ5X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1578,7 +1586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEVELOPMENT_TEAM = A72ZC8AJ5X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AltXPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1608,7 +1616,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEVELOPMENT_TEAM = A72ZC8AJ5X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AltXPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
