@@ -835,6 +835,7 @@ private extension ALTDeviceManager
                 {
                     additionalValues[Bundle.Info.deviceID] = device.identifier
                     additionalValues[Bundle.Info.serverID] = UserDefaults.standard.serverID
+                    additionalValues[Bundle.Info.devicePairingString] = ALTDeviceManager.shared.getPairingPlistString(device.identifier)
                     
                     if
                         let machineIdentifier = certificate.machineIdentifier,

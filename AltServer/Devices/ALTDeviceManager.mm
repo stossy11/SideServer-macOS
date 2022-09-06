@@ -27,6 +27,8 @@
 #include <libimobiledevice/afc.h>
 #include <libimobiledevice/misagent.h>
 #include <libimobiledevice/mobile_image_mounter.h>
+#include <common/userpref.h>
+#include <libimobiledevice/service.h>
 
 void ALTDeviceManagerUpdateStatus(plist_t command, plist_t status, void *udid);
 void ALTDeviceManagerUpdateAppDeletionStatus(plist_t command, plist_t status, void *uuid);
@@ -385,6 +387,38 @@ NSNotificationName const ALTDeviceManagerDeviceDidDisconnectNotification = @"ALT
     });
         
     return progress;
+}
+- (NSString *)getPairingPlistString:(NSString*)udid{
+    plist_t pair_record = NULL;
+    char *buffer = NULL;
+    uint32_t length;
+    char* temp_udid = (char *)udid.UTF8String;
+    userpref_read_pair_record(temp_udid, &pair_record);
+    plist_dict_set_item(pair_record, "UDID", plist_new_string(temp_udid));
+    plist_to_xml(pair_record, &buffer, &length);
+    return [NSString stringWithUTF8String:(buffer)];
+    }
+
+static void print_error_message(lockdownd_error_t err, const char *udid)
+{
+    switch (err) {
+        case LOCKDOWN_E_PASSWORD_PROTECTED:
+            fprintf(stderr, "ERROR: Could not validate with device %s because a passcode is set. Please enter the passcode on the device and retry.\n", udid);
+            break;
+        case LOCKDOWN_E_INVALID_CONF:
+        case LOCKDOWN_E_INVALID_HOST_ID:
+            fprintf(stderr, "ERROR: Device %s is not paired with this host\n", udid);
+            break;
+        case LOCKDOWN_E_PAIRING_DIALOG_RESPONSE_PENDING:
+            fprintf(stderr, "ERROR: Please accept the trust dialog on the screen of device %s, then attempt to pair again.\n", udid);
+            break;
+        case LOCKDOWN_E_USER_DENIED_PAIRING:
+            fprintf(stderr, "ERROR: Device %s said that the user denied the trust dialog.\n", udid);
+            break;
+        default:
+            fprintf(stderr, "ERROR: Device %s returned unhandled error code %d\n", udid, err);
+            break;
+    }
 }
 
 - (BOOL)writeDirectory:(NSURL *)directoryURL toDestinationURL:(NSURL *)destinationURL client:(afc_client_t)afc progress:(NSProgress *)progress error:(NSError **)error
