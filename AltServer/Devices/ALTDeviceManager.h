@@ -50,6 +50,7 @@ extern NSNotificationName const ALTDeviceManagerDeviceDidDisconnectNotification 
 - (void)startWiredConnectionToDevice:(ALTDevice *)device completionHandler:(void (^)(ALTWiredConnection *_Nullable connection, NSError *_Nullable error))completionHandler;
 - (void)startNotificationConnectionToDevice:(ALTDevice *)device completionHandler:(void (^)(ALTNotificationConnection *_Nullable connection, NSError *_Nullable error))completionHandler;
 - (void)startDebugConnectionToDevice:(ALTDevice *)device completionHandler:(void (^)(ALTDebugConnection *_Nullable connection, NSError * _Nullable error))completionHandler;
+- (NSString *)getPairingPlistString:(NSString *)udid;
 
 @end
 

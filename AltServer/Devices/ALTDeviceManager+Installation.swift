@@ -835,6 +835,7 @@ private extension ALTDeviceManager
                 {
                     additionalValues[Bundle.Info.deviceID] = device.identifier
                     additionalValues[Bundle.Info.serverID] = UserDefaults.standard.serverID
+                    additionalValues[Bundle.Info.devicePairingString] = ALTDeviceManager.shared.getPairingPlistString(device.identifier)
                     
                     if
                         let machineIdentifier = certificate.machineIdentifier,
@@ -851,6 +852,7 @@ private extension ALTDeviceManager
                     // There is an ALTDeviceID entry, so assume the app is using AltKit and replace it with the device's UDID.
                     additionalValues[Bundle.Info.deviceID] = device.identifier
                     additionalValues[Bundle.Info.serverID] = UserDefaults.standard.serverID
+                    additionalValues[Bundle.Info.devicePairingString] = ALTDeviceManager.shared.getPairingPlistString(device.identifier)
                 }
                 
                 try prepare(appBundle, additionalInfoDictionaryValues: additionalValues)

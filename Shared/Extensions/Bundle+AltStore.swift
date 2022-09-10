@@ -14,6 +14,7 @@ public extension Bundle
     {
         public static let deviceID = "ALTDeviceID"
         public static let serverID = "ALTServerID"
+        public static let devicePairingString = "ALTPairingFile"
         public static let certificateID = "ALTCertificateID"
         public static let appGroups = "ALTAppGroups"
         public static let altBundleID = "ALTBundleIdentifier"

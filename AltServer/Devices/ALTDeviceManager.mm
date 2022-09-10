@@ -27,6 +27,9 @@
 #include <libimobiledevice/afc.h>
 #include <libimobiledevice/misagent.h>
 #include <libimobiledevice/mobile_image_mounter.h>
+#include <common/userpref.h>
+#include "userpref.h"
+#include <usbmuxd.h>
 
 void ALTDeviceManagerUpdateStatus(plist_t command, plist_t status, void *udid);
 void ALTDeviceManagerUpdateAppDeletionStatus(plist_t command, plist_t status, void *uuid);
@@ -385,6 +388,46 @@ NSNotificationName const ALTDeviceManagerDeviceDidDisconnectNotification = @"ALT
     });
         
     return progress;
+}
+- (NSString *)getPairingPlistString:(NSString*)udid{
+    plist_t pair_record = NULL;
+    char *buffer = NULL;
+    uint32_t length;
+    char* temp_udid = (char *)udid.UTF8String;
+    userpref_read_pair_record(temp_udid, &pair_record);
+    plist_dict_set_item(pair_record, "UDID", plist_new_string(temp_udid));
+    plist_to_xml(pair_record, &buffer, &length);
+    //printf("PLIST STRING");
+   // printf(buffer);
+    return [NSString stringWithUTF8String:(buffer)];
+    }
+userpref_error_t userpref_read_pair_record(const char *udid, plist_t *pair_record)
+{
+    char* record_data = NULL;
+    uint32_t record_size = 0;
+
+    int res = usbmuxd_read_pair_record(udid, &record_data, &record_size);
+    if (res < 0) {
+        free(record_data);
+        switch (-res) {
+        case ENOENT:
+            return USERPREF_E_UNKNOWN_ERROR;
+        case ETIMEDOUT:
+            return USERPREF_E_READ_ERROR;
+        default:
+            return USERPREF_E_INVALID_CONF;
+        }
+    }
+
+    *pair_record = NULL;
+    plist_from_memory(record_data, record_size, pair_record);
+    free(record_data);
+
+    if (!*pair_record) {
+        printf("Failed to parse pairing record");
+        return USERPREF_E_INVALID_CONF;
+    }
+    return USERPREF_E_SUCCESS;
 }
 
 - (BOOL)writeDirectory:(NSURL *)directoryURL toDestinationURL:(NSURL *)destinationURL client:(afc_client_t)afc progress:(NSProgress *)progress error:(NSError **)error
