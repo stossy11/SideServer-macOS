@@ -13,7 +13,7 @@ extension ALTApplication
     static let altstoreBundleID = "com.rileytestut.AltStore"
     
     var isAltStoreApp: Bool {
-        let isAltStoreApp = self.bundleIdentifier.contains(ALTApplication.altstoreBundleID) || self.bundleIdentifier.contains("SideStore")
+        let isAltStoreApp = self.bundleIdentifier.contains(ALTApplication.altstoreBundleID)
         return isAltStoreApp
     }
 }
