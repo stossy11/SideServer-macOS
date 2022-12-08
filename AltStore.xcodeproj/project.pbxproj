@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0380808828C6E03800C653E1 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = 0380808728C6E03800C653E1 /* userpref.c */; };
 		0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
-		03C6DA9828C6E2AC002B2779 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = 0380808928C6E03900C653E1 /* userpref.h */; };
+		03ACA62D2942527D00AC9F17 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = 03ACA62B2942527D00AC9F17 /* userpref.c */; };
+		03ACA62E2942527D00AC9F17 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = 03ACA62C2942527D00AC9F17 /* userpref.h */; };
 		B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FB284F3B2400DA9E2F /* Sparkle */; };
 		B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FE284F3C0900DA9E2F /* STPrivilegedTask */; };
 		BF0241AA22F29CCD00129732 /* UserDefaults+AltServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0241A922F29CCD00129732 /* UserDefaults+AltServer.swift */; };
@@ -205,8 +205,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0380808728C6E03800C653E1 /* userpref.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = userpref.c; sourceTree = SOURCE_ROOT; };
-		0380808928C6E03900C653E1 /* userpref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userpref.h; sourceTree = SOURCE_ROOT; };
+		03ACA62B2942527D00AC9F17 /* userpref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userpref.c; path = Dependencies/libimobiledevice/src/userpref.c; sourceTree = SOURCE_ROOT; };
+		03ACA62C2942527D00AC9F17 /* userpref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userpref.h; path = Dependencies/libimobiledevice/src/userpref.h; sourceTree = SOURCE_ROOT; };
 		B3146EC5284F57EF00BBC3FD /* AltSign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AltSign; path = Dependencies/AltSign; sourceTree = "<group>"; };
 		B3C39606284F4C8400DA9E2F /* CodeSigning.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B3C39607284F4C8400DA9E2F /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
@@ -489,8 +489,6 @@
 			children = (
 				BF4588282298D3B400BD7491 /* common */,
 				BF4587D72298D3A800BD7491 /* afc.c */,
-				0380808728C6E03800C653E1 /* userpref.c */,
-				0380808928C6E03900C653E1 /* userpref.h */,
 				BF4587EC2298D3AA00BD7491 /* afc.h */,
 				BF4587DF2298D3A900BD7491 /* debugserver.c */,
 				BF4587DE2298D3A900BD7491 /* debugserver.h */,
@@ -504,6 +502,8 @@
 				BF4587E02298D3A900BD7491 /* heartbeat.h */,
 				BF4587EB2298D3AA00BD7491 /* house_arrest.c */,
 				BF4587E22298D3A900BD7491 /* house_arrest.h */,
+				03ACA62B2942527D00AC9F17 /* userpref.c */,
+				03ACA62C2942527D00AC9F17 /* userpref.h */,
 				BF4587F12298D3AA00BD7491 /* idevice.c */,
 				BF4587D52298D3A800BD7491 /* idevice.h */,
 				BF4587D92298D3A900BD7491 /* installation_proxy.c */,
@@ -797,7 +797,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4588112298D3AB00BD7491 /* misagent.h in Headers */,
-				03C6DA9828C6E2AC002B2779 /* userpref.h in Headers */,
 				BF4588042298D3AB00BD7491 /* lockdown.h in Headers */,
 				BF4588402298D3F800BD7491 /* collection.h in Headers */,
 				BF45880B2298D3AB00BD7491 /* mobilesync.h in Headers */,
@@ -813,6 +812,7 @@
 				BF4588202298D3AB00BD7491 /* mobile_image_mounter.h in Headers */,
 				BF4588122298D3AB00BD7491 /* house_arrest.h in Headers */,
 				BF45881F2298D3AB00BD7491 /* device_link_service.h in Headers */,
+				03ACA62E2942527D00AC9F17 /* userpref.h in Headers */,
 				BFD52C1A22A1A9CB000B7ED1 /* time64_limits.h in Headers */,
 				BF45880E2298D3AB00BD7491 /* debugserver.h in Headers */,
 				BF45884B2298D55000BD7491 /* thread.h in Headers */,
@@ -1120,7 +1120,7 @@
 				BFD52C1722A1A9CB000B7ED1 /* Key.cpp in Sources */,
 				BF45880D2298D3AB00BD7491 /* mobilebackup.c in Sources */,
 				BFD52C0C22A1A9CB000B7ED1 /* Date.cpp in Sources */,
-				0380808828C6E03800C653E1 /* userpref.c in Sources */,
+				03ACA62D2942527D00AC9F17 /* userpref.c in Sources */,
 				BFD52C0A22A1A9CB000B7ED1 /* plist.c in Sources */,
 				BFD52C1322A1A9CB000B7ED1 /* Data.cpp in Sources */,
 				BF45883A2298D3C100BD7491 /* debug.c in Sources */,
