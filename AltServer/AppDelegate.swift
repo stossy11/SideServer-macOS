@@ -14,13 +14,7 @@ import AltSign
 import LaunchAtLogin
 import Sparkle
 
-#if STAGING
-private let altstoreAppURL = URL(string: "https://f000.backblazeb2.com/file/altstore-staging/altstore.ipa")!
-#elseif BETA
-private let altstoreAppURL = URL(string: "https://cdn.altstore.io/file/altstore/altstore-beta.ipa")!
-#else
-private let altstoreAppURL = URL(string: "https://cdn.altstore.io/file/altstore/altstore.ipa")!
-#endif
+private let altstoreAppURL = URL(string: "https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.ipa")!
 
 extension ALTDevice: MenuDisplayable {}
 

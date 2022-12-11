@@ -532,15 +532,15 @@ private extension ALTDeviceManager
         let parentBundleID = parentApp?.bundleIdentifier ?? application.bundleIdentifier
         let updatedParentBundleID: String
         
-        if application.isAltStoreApp
-        {
-            // Use legacy bundle ID format for AltStore (and its extensions).
-            updatedParentBundleID = "com.\(team.identifier).\(parentBundleID)"
-        }
-        else
-        {
+//        if application.isAltStoreApp
+//        {
+//            // Use legacy bundle ID format for AltStore (and its extensions).
+//            updatedParentBundleID = "com.\(team.identifier).\(parentBundleID)"
+//        }
+//        else
+//        {
             updatedParentBundleID = parentBundleID + "." + team.identifier // Append just team identifier to make it harder to track.
-        }
+    //    }
         
         let bundleID = application.bundleIdentifier.replacingOccurrences(of: parentBundleID, with: updatedParentBundleID)
         
