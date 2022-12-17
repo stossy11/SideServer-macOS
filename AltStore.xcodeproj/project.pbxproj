@@ -205,8 +205,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03ACA62B2942527D00AC9F17 /* userpref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userpref.c; path = Dependencies/libimobiledevice/src/userpref.c; sourceTree = SOURCE_ROOT; };
-		03ACA62C2942527D00AC9F17 /* userpref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userpref.h; path = Dependencies/libimobiledevice/src/userpref.h; sourceTree = SOURCE_ROOT; };
+		03ACA62B2942527D00AC9F17 /* userpref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userpref.c; path = Dependencies/libimobiledevice/common/userpref.c; sourceTree = SOURCE_ROOT; };
+		03ACA62C2942527D00AC9F17 /* userpref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userpref.h; path = Dependencies/libimobiledevice/common/userpref.h; sourceTree = SOURCE_ROOT; };
 		B3146EC5284F57EF00BBC3FD /* AltSign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AltSign; path = Dependencies/AltSign; sourceTree = "<group>"; };
 		B3C39606284F4C8400DA9E2F /* CodeSigning.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B3C39607284F4C8400DA9E2F /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
