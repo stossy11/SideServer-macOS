@@ -69,4 +69,8 @@ public extension Bundle
         let infoPlistURL = self.infoPlistURL
         return NSDictionary(contentsOf: infoPlistURL) as? [String : Any]
     }
+
+	var appIdentifierPrefix: String? {
+		infoDictionary?["AppIdentifierPrefix"] as? String
+	}
 }

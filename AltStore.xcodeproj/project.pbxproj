@@ -150,6 +150,9 @@
 		BFF7C920257844FA00E55F36 /* ALTPluginService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */; };
 		BFF7C9342578492100E55F36 /* ALTAnisetteData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */; };
 		D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D58D5F2D26DFE68E00E55E38 /* LaunchAtLogin */; };
+		E7DBFE2F294DD208002602A4 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E7DBFE2E294DD208002602A4 /* KeychainAccess */; };
+		E7DBFE32294DD6D1002602A4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DBFE31294DD6D1002602A4 /* Keychain.swift */; };
+		E7DBFE37294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -374,6 +377,8 @@
 		BFF7C90C257844C900E55F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFF7C93B257849C600E55F36 /* AltXPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AltXPC.entitlements; sourceTree = "<group>"; };
 		D533E8B62727841800A9B5DD /* libAppleArchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAppleArchive.tbd; path = usr/lib/libAppleArchive.tbd; sourceTree = SDKROOT; };
+		E7DBFE31294DD6D1002602A4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDAuthenticationAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +395,7 @@
 			files = (
 				D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */,
 				B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */,
+				E7DBFE2F294DD208002602A4 /* KeychainAccess in Frameworks */,
 				BF088D382501A833008082D9 /* OpenSSL.xcframework in Frameworks */,
 				0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */,
 				B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */,
@@ -446,6 +452,7 @@
 				BFD52BD222A06EFB000B7ED1 /* ALTConstants.h */,
 				BF718BD723C93DB700A89F2D /* ALTConstants.m */,
 				BF18BFFF2485A75F00DD5981 /* Server Protocol */,
+				E7DBFE30294DD6C3002602A4 /* Components */,
 				BFF767CF2489AC240097E58C /* Connections */,
 				BFF7C92D2578464D00E55F36 /* XPC */,
 				BFF767C32489A6800097E58C /* Extensions */,
@@ -467,6 +474,7 @@
 				BF703195229F36FF006E110F /* Devices */,
 				BFD52BDC22A0A659000B7ED1 /* Connections */,
 				BF055B4A233B528B0086DEA9 /* Extensions */,
+				E7DBFE35294DDD3A002602A4 /* Views */,
 				BFE972E0260A8B0700D0BDAC /* Categories */,
 				BF703194229F36F6006E110F /* Resources */,
 				BF703196229F370F006E110F /* Supporting Files */,
@@ -789,6 +797,22 @@
 			path = XPC;
 			sourceTree = "<group>";
 		};
+		E7DBFE30294DD6C3002602A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E7DBFE31294DD6D1002602A4 /* Keychain.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E7DBFE35294DDD3A002602A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -865,6 +889,7 @@
 				D58D5F2D26DFE68E00E55E38 /* LaunchAtLogin */,
 				B3C395FB284F3B2400DA9E2F /* Sparkle */,
 				B3C395FE284F3C0900DA9E2F /* STPrivilegedTask */,
+				E7DBFE2E294DD208002602A4 /* KeychainAccess */,
 			);
 			productName = AltServer;
 			productReference = BF45868D229872EA00BD7491 /* AltServer.app */;
@@ -1059,6 +1084,7 @@
 			files = (
 				BFF767C82489A74E0097E58C /* WirelessConnectionHandler.swift in Sources */,
 				BFF0394B25F0551600BE607D /* MenuController.swift in Sources */,
+				E7DBFE37294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift in Sources */,
 				BFECAC8024FD950B0077C41F /* ConnectionManager.swift in Sources */,
 				BFC15ADA27BC352300ED2FB4 /* PluginVersion.swift in Sources */,
 				BFECAC8324FD950B0077C41F /* NetworkConnection.swift in Sources */,
@@ -1078,6 +1104,7 @@
 				BF1E312B229F474900370A3C /* RequestHandler.swift in Sources */,
 				BF718BD123C91BD300A89F2D /* ALTWiredConnection.mm in Sources */,
 				BFAD678E25E0649500D4C4D1 /* ALTDebugConnection.mm in Sources */,
+				E7DBFE32294DD6D1002602A4 /* Keychain.swift in Sources */,
 				BFECAC8524FD950B0077C41F /* Connection.swift in Sources */,
 				BF458690229872EA00BD7491 /* AppDelegate.swift in Sources */,
 				BFECAC8424FD950B0077C41F /* ALTConstants.m in Sources */,
@@ -1754,6 +1781,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D58D5F2C26DFE68E00E55E38 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
+		};
+		E7DBFE2E294DD208002602A4 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3C395EF284F2DE700DA9E2F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

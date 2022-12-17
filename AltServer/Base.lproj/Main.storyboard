@@ -66,6 +66,7 @@
                         <outlet property="installAltStoreMenuItem" destination="MJ8-Lt-SSV" id="KYp-c5-8Ru"/>
                         <outlet property="installMailPluginMenuItem" destination="3CM-gV-X2G" id="lio-ha-z0S"/>
                         <outlet property="launchAtLoginMenuItem" destination="IyR-FQ-upe" id="Fxn-EP-hwH"/>
+                        <outlet property="logInMenuItem" destination="k7w-cA-c4B" id="Wta-2g-pGI"/>
                         <outlet property="sideloadAppMenuItem" destination="x0e-zI-0A2" id="GJo-FY-1GO"/>
                         <outlet property="sideloadIPAConnectedDevicesMenu" destination="IuI-bV-fTY" id="QQw-St-HfG"/>
                     </connections>
@@ -129,6 +130,10 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="mVM-Nm-Zi9"/>
+                                        <menuItem title="Log in" id="k7w-cA-c4B">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="mhj-D5-Ycy"/>
                                         <menuItem title="Check for Updates..." id="Tnq-gD-Eic" userLabel="Check for Updates">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
