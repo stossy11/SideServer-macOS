@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0380808828C6E03800C653E1 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = 0380808728C6E03800C653E1 /* userpref.c */; };
 		0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
-		03C6DA9828C6E2AC002B2779 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = 0380808928C6E03900C653E1 /* userpref.h */; };
+		03ACA62D2942527D00AC9F17 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = 03ACA62B2942527D00AC9F17 /* userpref.c */; };
+		03ACA62E2942527D00AC9F17 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = 03ACA62C2942527D00AC9F17 /* userpref.h */; };
 		B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FB284F3B2400DA9E2F /* Sparkle */; };
 		B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FE284F3C0900DA9E2F /* STPrivilegedTask */; };
 		BF0241AA22F29CCD00129732 /* UserDefaults+AltServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0241A922F29CCD00129732 /* UserDefaults+AltServer.swift */; };
@@ -150,6 +150,9 @@
 		BFF7C920257844FA00E55F36 /* ALTPluginService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */; };
 		BFF7C9342578492100E55F36 /* ALTAnisetteData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */; };
 		D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D58D5F2D26DFE68E00E55E38 /* LaunchAtLogin */; };
+		E7DBFE2F294DD208002602A4 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E7DBFE2E294DD208002602A4 /* KeychainAccess */; };
+		E7DBFE32294DD6D1002602A4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DBFE31294DD6D1002602A4 /* Keychain.swift */; };
+		E7DBFE37294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,8 +208,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0380808728C6E03800C653E1 /* userpref.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = userpref.c; sourceTree = SOURCE_ROOT; };
-		0380808928C6E03900C653E1 /* userpref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userpref.h; sourceTree = SOURCE_ROOT; };
+		03ACA62B2942527D00AC9F17 /* userpref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userpref.c; path = Dependencies/libimobiledevice/common/userpref.c; sourceTree = SOURCE_ROOT; };
+		03ACA62C2942527D00AC9F17 /* userpref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userpref.h; path = Dependencies/libimobiledevice/common/userpref.h; sourceTree = SOURCE_ROOT; };
 		B3146EC5284F57EF00BBC3FD /* AltSign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AltSign; path = Dependencies/AltSign; sourceTree = "<group>"; };
 		B3C39606284F4C8400DA9E2F /* CodeSigning.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B3C39607284F4C8400DA9E2F /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
@@ -374,6 +377,8 @@
 		BFF7C90C257844C900E55F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFF7C93B257849C600E55F36 /* AltXPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AltXPC.entitlements; sourceTree = "<group>"; };
 		D533E8B62727841800A9B5DD /* libAppleArchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAppleArchive.tbd; path = usr/lib/libAppleArchive.tbd; sourceTree = SDKROOT; };
+		E7DBFE31294DD6D1002602A4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDAuthenticationAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +395,7 @@
 			files = (
 				D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */,
 				B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */,
+				E7DBFE2F294DD208002602A4 /* KeychainAccess in Frameworks */,
 				BF088D382501A833008082D9 /* OpenSSL.xcframework in Frameworks */,
 				0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */,
 				B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */,
@@ -446,6 +452,7 @@
 				BFD52BD222A06EFB000B7ED1 /* ALTConstants.h */,
 				BF718BD723C93DB700A89F2D /* ALTConstants.m */,
 				BF18BFFF2485A75F00DD5981 /* Server Protocol */,
+				E7DBFE30294DD6C3002602A4 /* Components */,
 				BFF767CF2489AC240097E58C /* Connections */,
 				BFF7C92D2578464D00E55F36 /* XPC */,
 				BFF767C32489A6800097E58C /* Extensions */,
@@ -467,6 +474,7 @@
 				BF703195229F36FF006E110F /* Devices */,
 				BFD52BDC22A0A659000B7ED1 /* Connections */,
 				BF055B4A233B528B0086DEA9 /* Extensions */,
+				E7DBFE35294DDD3A002602A4 /* Views */,
 				BFE972E0260A8B0700D0BDAC /* Categories */,
 				BF703194229F36F6006E110F /* Resources */,
 				BF703196229F370F006E110F /* Supporting Files */,
@@ -489,8 +497,6 @@
 			children = (
 				BF4588282298D3B400BD7491 /* common */,
 				BF4587D72298D3A800BD7491 /* afc.c */,
-				0380808728C6E03800C653E1 /* userpref.c */,
-				0380808928C6E03900C653E1 /* userpref.h */,
 				BF4587EC2298D3AA00BD7491 /* afc.h */,
 				BF4587DF2298D3A900BD7491 /* debugserver.c */,
 				BF4587DE2298D3A900BD7491 /* debugserver.h */,
@@ -504,6 +510,8 @@
 				BF4587E02298D3A900BD7491 /* heartbeat.h */,
 				BF4587EB2298D3AA00BD7491 /* house_arrest.c */,
 				BF4587E22298D3A900BD7491 /* house_arrest.h */,
+				03ACA62B2942527D00AC9F17 /* userpref.c */,
+				03ACA62C2942527D00AC9F17 /* userpref.h */,
 				BF4587F12298D3AA00BD7491 /* idevice.c */,
 				BF4587D52298D3A800BD7491 /* idevice.h */,
 				BF4587D92298D3A900BD7491 /* installation_proxy.c */,
@@ -789,6 +797,22 @@
 			path = XPC;
 			sourceTree = "<group>";
 		};
+		E7DBFE30294DD6C3002602A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E7DBFE31294DD6D1002602A4 /* Keychain.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E7DBFE35294DDD3A002602A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -797,7 +821,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4588112298D3AB00BD7491 /* misagent.h in Headers */,
-				03C6DA9828C6E2AC002B2779 /* userpref.h in Headers */,
 				BF4588042298D3AB00BD7491 /* lockdown.h in Headers */,
 				BF4588402298D3F800BD7491 /* collection.h in Headers */,
 				BF45880B2298D3AB00BD7491 /* mobilesync.h in Headers */,
@@ -813,6 +836,7 @@
 				BF4588202298D3AB00BD7491 /* mobile_image_mounter.h in Headers */,
 				BF4588122298D3AB00BD7491 /* house_arrest.h in Headers */,
 				BF45881F2298D3AB00BD7491 /* device_link_service.h in Headers */,
+				03ACA62E2942527D00AC9F17 /* userpref.h in Headers */,
 				BFD52C1A22A1A9CB000B7ED1 /* time64_limits.h in Headers */,
 				BF45880E2298D3AB00BD7491 /* debugserver.h in Headers */,
 				BF45884B2298D55000BD7491 /* thread.h in Headers */,
@@ -865,6 +889,7 @@
 				D58D5F2D26DFE68E00E55E38 /* LaunchAtLogin */,
 				B3C395FB284F3B2400DA9E2F /* Sparkle */,
 				B3C395FE284F3C0900DA9E2F /* STPrivilegedTask */,
+				E7DBFE2E294DD208002602A4 /* KeychainAccess */,
 			);
 			productName = AltServer;
 			productReference = BF45868D229872EA00BD7491 /* AltServer.app */;
@@ -1059,6 +1084,7 @@
 			files = (
 				BFF767C82489A74E0097E58C /* WirelessConnectionHandler.swift in Sources */,
 				BFF0394B25F0551600BE607D /* MenuController.swift in Sources */,
+				E7DBFE37294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift in Sources */,
 				BFECAC8024FD950B0077C41F /* ConnectionManager.swift in Sources */,
 				BFC15ADA27BC352300ED2FB4 /* PluginVersion.swift in Sources */,
 				BFECAC8324FD950B0077C41F /* NetworkConnection.swift in Sources */,
@@ -1078,6 +1104,7 @@
 				BF1E312B229F474900370A3C /* RequestHandler.swift in Sources */,
 				BF718BD123C91BD300A89F2D /* ALTWiredConnection.mm in Sources */,
 				BFAD678E25E0649500D4C4D1 /* ALTDebugConnection.mm in Sources */,
+				E7DBFE32294DD6D1002602A4 /* Keychain.swift in Sources */,
 				BFECAC8524FD950B0077C41F /* Connection.swift in Sources */,
 				BF458690229872EA00BD7491 /* AppDelegate.swift in Sources */,
 				BFECAC8424FD950B0077C41F /* ALTConstants.m in Sources */,
@@ -1120,7 +1147,7 @@
 				BFD52C1722A1A9CB000B7ED1 /* Key.cpp in Sources */,
 				BF45880D2298D3AB00BD7491 /* mobilebackup.c in Sources */,
 				BFD52C0C22A1A9CB000B7ED1 /* Date.cpp in Sources */,
-				0380808828C6E03800C653E1 /* userpref.c in Sources */,
+				03ACA62D2942527D00AC9F17 /* userpref.c in Sources */,
 				BFD52C0A22A1A9CB000B7ED1 /* plist.c in Sources */,
 				BFD52C1322A1A9CB000B7ED1 /* Data.cpp in Sources */,
 				BF45883A2298D3C100BD7491 /* debug.c in Sources */,
@@ -1211,7 +1238,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = A72ZC8AJ5X;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1265,7 +1292,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = A72ZC8AJ5X;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1392,7 +1419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = AltPlugin/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles/";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1423,7 +1450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = AltPlugin/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles/";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1586,7 +1613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = A72ZC8AJ5X;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AltXPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1616,7 +1643,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = A72ZC8AJ5X;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AltXPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1754,6 +1781,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D58D5F2C26DFE68E00E55E38 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
+		};
+		E7DBFE2E294DD208002602A4 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3C395EF284F2DE700DA9E2F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -14,13 +14,7 @@ import AltSign
 import LaunchAtLogin
 import Sparkle
 
-#if STAGING
-private let altstoreAppURL = URL(string: "https://f000.backblazeb2.com/file/altstore-staging/altstore.ipa")!
-#elseif BETA
-private let altstoreAppURL = URL(string: "https://cdn.altstore.io/file/altstore/altstore-beta.ipa")!
-#else
-private let altstoreAppURL = URL(string: "https://cdn.altstore.io/file/altstore/altstore.ipa")!
-#endif
+private let altstoreAppURL = URL(string: "https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.ipa")!
 
 extension ALTDevice: MenuDisplayable {}
 
@@ -44,9 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet private var installMailPluginMenuItem: NSMenuItem!
     @IBOutlet private var installAltStoreMenuItem: NSMenuItem!
     @IBOutlet private var sideloadAppMenuItem: NSMenuItem!
-    
-    private weak var authenticationAppleIDTextField: NSTextField?
-    private weak var authenticationPasswordTextField: NSSecureTextField?
+	@IBOutlet private var logInMenuItem: NSMenuItem!
     
     private var connectedDevicesMenuController: MenuController<ALTDevice>!
     private var sideloadIPAConnectedDevicesMenuController: MenuController<ALTDevice>!
@@ -125,6 +117,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.installMailPlugin()
             }
         }
+
+		setupLoginMenuItem()
     }
 
     func applicationWillTerminate(_ aNotification: Notification)
@@ -197,48 +191,32 @@ private extension AppDelegate
     
     func installApplication(at url: URL, to device: ALTDevice)
     {
-        let alert = NSAlert()
-        alert.messageText = NSLocalizedString("Please enter your Apple ID and password.", comment: "")
-        alert.informativeText = NSLocalizedString("Your Apple ID and password are not saved and are only sent to Apple for authentication.", comment: "")
-        
-        let textFieldSize = NSSize(width: 300, height: 22)
-        
-        let appleIDTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: textFieldSize.width, height: textFieldSize.height))
-        appleIDTextField.delegate = self
-        appleIDTextField.translatesAutoresizingMaskIntoConstraints = false
-        appleIDTextField.placeholderString = NSLocalizedString("Apple ID", comment: "")
-        alert.window.initialFirstResponder = appleIDTextField
-        self.authenticationAppleIDTextField = appleIDTextField
-        
-        let passwordTextField = NSSecureTextField(frame: NSRect(x: 0, y: 0, width: textFieldSize.width, height: textFieldSize.height))
-        passwordTextField.delegate = self
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholderString = NSLocalizedString("Password", comment: "")
-        self.authenticationPasswordTextField = passwordTextField
-        
-        appleIDTextField.nextKeyView = passwordTextField
-        
-        let stackView = NSStackView(frame: NSRect(x: 0, y: 0, width: textFieldSize.width, height: textFieldSize.height * 2))
-        stackView.orientation = .vertical
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 0
-        stackView.addArrangedSubview(appleIDTextField)
-        stackView.addArrangedSubview(passwordTextField)
-        alert.accessoryView = stackView
-        
-        alert.addButton(withTitle: NSLocalizedString("Install", comment: ""))
-        alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
-        
-        self.authenticationAlert = alert
-        self.validate()
-        
-        NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
-                
-        let response = alert.runModal()
-        guard response == .alertFirstButtonReturn else { return }
-        
-        let username = appleIDTextField.stringValue
-        let password = passwordTextField.stringValue
+		let username: String
+		let password: String
+
+		if let _username = try? Keychain.shared.getValue(for: .appleIDEmail),
+		   let _password = try? Keychain.shared.getValue(for: .appleIDPassword) {
+			username = _username
+			password = _password
+		} else {
+			let alert = AppleIDAuthenticationAlert()
+			self.authenticationAlert = alert
+
+			NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
+
+			let didTapContinue = alert.display()
+			guard didTapContinue else { return }
+
+			username = alert.appleIDValue.trimmingCharacters(in: .whitespacesAndNewlines)
+			password = alert.passwordValue.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			do {
+				try Keychain.shared.setValue(username.isEmpty ? nil : username, for: .appleIDEmail)
+				try Keychain.shared.setValue(password.isEmpty ? nil : password, for: .appleIDPassword)
+			} catch {
+				print("AppleID Auth: Error saving credentials: \(error)")
+			}
+		}
         
         func finish(_ result: Result<ALTApplication, Error>)
         {
@@ -453,6 +431,58 @@ private extension AppDelegate
     }
 }
 
+// MARK: - AppDelegate+loginMenuItem
+
+private extension AppDelegate {
+	private func setupLoginMenuItem() {
+		do {
+			let email = try Keychain.shared.getValue(for: .appleIDEmail)
+			logInMenuItem.title = "Log out (\(email))"
+			logInMenuItem.action = #selector(logoutFromAppleID)
+		} catch {
+			print("Error getting stored AppleID credentials: \(error)")
+			logInMenuItem.title = "Log in..."
+			logInMenuItem.action = #selector(loginToAppleID)
+		}
+	}
+
+	@objc private func loginToAppleID() {
+		let alert = AppleIDAuthenticationAlert()
+
+		NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
+		let didTapContinue = alert.display()
+		guard didTapContinue else { return }
+
+		let username = alert.appleIDValue.trimmingCharacters(in: .whitespacesAndNewlines)
+		let password = alert.passwordValue.trimmingCharacters(in: .whitespacesAndNewlines)
+
+		guard !username.isEmpty && !password.isEmpty else {
+			print("AppleID Auth: Username and/or password was empty.")
+			return
+		}
+
+		do {
+			try Keychain.shared.setValue(username, for: .appleIDEmail)
+			try Keychain.shared.setValue(password, for: .appleIDPassword)
+		} catch {
+			let errorAlert = NSAlert(error: error)
+			NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
+			errorAlert.runModal()
+			
+			print("AppleID Auth: Error saving credentials: \(error)")
+		}
+
+		setupLoginMenuItem()
+	}
+
+	@objc private func logoutFromAppleID() {
+		print("Removing AppleID credentials!")
+		try? Keychain.shared.setValue(nil, for: .appleIDEmail)
+		try? Keychain.shared.setValue(nil, for: .appleIDPassword)
+		setupLoginMenuItem()
+	}
+}
+
 extension AppDelegate: NSMenuDelegate
 {
     func menuWillOpen(_ menu: NSMenu)
@@ -568,38 +598,6 @@ extension AppDelegate: NSMenuDelegate
         let submenu = previousItem.submenu
         previousItem.submenu = nil
         previousItem.submenu = submenu
-    }
-}
-
-extension AppDelegate: NSTextFieldDelegate
-{
-    func controlTextDidChange(_ obj: Notification)
-    {
-        self.validate()
-    }
-    
-    func controlTextDidEndEditing(_ obj: Notification)
-    {
-        self.validate()
-    }
-    
-    private func validate()
-    {
-        guard
-            let appleID = self.authenticationAppleIDTextField?.stringValue.trimmingCharacters(in: .whitespacesAndNewlines),
-            let password = self.authenticationPasswordTextField?.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
-        else { return }
-        
-        if appleID.isEmpty || password.isEmpty
-        {
-            self.authenticationAlert?.buttons.first?.isEnabled = false
-        }
-        else
-        {
-            self.authenticationAlert?.buttons.first?.isEnabled = true
-        }
-        
-        self.authenticationAlert?.layout()
     }
 }
 
