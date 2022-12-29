@@ -3,6 +3,7 @@ name: build_app
 on:
   push:
     tags: [ develop ]
+  workflow_dispatch:
 
 jobs:
   master_deploy:
