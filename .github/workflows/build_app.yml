@@ -5,6 +5,9 @@ on:
     tags: [ develop ]
   workflow_dispatch:
 
+env:
+  SCHEME: AltServer
+  
 jobs:
   master_deploy:
     runs-on: macos-latest
@@ -12,15 +15,11 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v2
-
-      - name: Find first scheme of default project
-        run: |
-          echo "::set-env name=SCHEME::$(xcodebuild -list -json | jq -r '.project.schemes[0]')"
           
       - name: Set environment variables from project settings
         run: |
           function set-env-from-proj { 
-            echo "::set-env name=$1::$(xcodebuild -scheme "$SCHEME" -showBuildSettings | grep " $1 " | sed "s/[ ]*$1 = //")"
+            echo "$1=$(xcodebuild -scheme "AltServer" -showBuildSettings | grep " $1 " | sed "s/[ ]*$1 = //")" >> $GITHUB_ENV
           }
           set-env-from-proj FULL_PRODUCT_NAME
           set-env-from-proj INSTALL_PATH
