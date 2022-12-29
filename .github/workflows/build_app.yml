@@ -1,9 +1,6 @@
 name: build_app
 
-on:
-  push:
-    tags: [ develop ]
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 env:
   SCHEME: AltServer
@@ -15,6 +12,8 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v2
+        with:
+          submodules: recursive  
           
       - name: Set environment variables from project settings
         run: |
