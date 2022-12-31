@@ -229,7 +229,7 @@
 		BF1E314922A060F400370A3C /* NSError+ALTServerError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+ALTServerError.m"; sourceTree = "<group>"; };
 		BF1FE357251A9FB000C3CE09 /* NSXPCConnection+MachServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSXPCConnection+MachServices.swift"; sourceTree = "<group>"; };
 		BF3F786322CAA41E008FBD20 /* ALTDeviceManager+Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ALTDeviceManager+Installation.swift"; sourceTree = "<group>"; };
-		BF45868D229872EA00BD7491 /* AltServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF45868D229872EA00BD7491 /* SideServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF45868F229872EA00BD7491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF458693229872EA00BD7491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF458696229872EA00BD7491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -695,7 +695,7 @@
 		BFD2476B2284B9A500981D42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF45868D229872EA00BD7491 /* AltServer.app */,
+				BF45868D229872EA00BD7491 /* SideServer.app */,
 				BF45872B2298D31600BD7491 /* libimobiledevice.a */,
 				BF5C5FC5237DF5AE00EDD0C6 /* AltPlugin.mailbundle */,
 				BFF7C904257844C900E55F36 /* AltXPC.xpc */,
@@ -865,9 +865,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BF45868C229872EA00BD7491 /* AltServer */ = {
+		BF45868C229872EA00BD7491 /* SideServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF45869A229872EA00BD7491 /* Build configuration list for PBXNativeTarget "AltServer" */;
+			buildConfigurationList = BF45869A229872EA00BD7491 /* Build configuration list for PBXNativeTarget "SideServer" */;
 			buildPhases = (
 				BF458689229872EA00BD7491 /* Sources */,
 				BF45868B229872EA00BD7491 /* Resources */,
@@ -883,7 +883,7 @@
 				BFF7C90E257844C900E55F36 /* PBXTargetDependency */,
 				0380808C28C6E10300C653E1 /* PBXTargetDependency */,
 			);
-			name = AltServer;
+			name = SideServer;
 			packageProductDependencies = (
 				BF088D352501A821008082D9 /* AltSign-Dynamic */,
 				D58D5F2D26DFE68E00E55E38 /* LaunchAtLogin */,
@@ -892,7 +892,7 @@
 				E7DBFE2E294DD208002602A4 /* KeychainAccess */,
 			);
 			productName = AltServer;
-			productReference = BF45868D229872EA00BD7491 /* AltServer.app */;
+			productReference = BF45868D229872EA00BD7491 /* SideServer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BF45872A2298D31600BD7491 /* libimobiledevice */ = {
@@ -1003,7 +1003,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF45868C229872EA00BD7491 /* AltServer */,
+				BF45868C229872EA00BD7491 /* SideServer */,
 				BF45872A2298D31600BD7491 /* libimobiledevice */,
 				BF5C5FC4237DF5AE00EDD0C6 /* AltPlugin */,
 				BFF7C903257844C900E55F36 /* AltXPC */,
@@ -1664,7 +1664,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF45869A229872EA00BD7491 /* Build configuration list for PBXNativeTarget "AltServer" */ = {
+		BF45869A229872EA00BD7491 /* Build configuration list for PBXNativeTarget "SideServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF45869B229872EA00BD7491 /* Debug */,

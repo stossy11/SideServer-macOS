@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF45868C229872EA00BD7491"
-            BuildableName = "AltServer.app"
-            BlueprintName = "AltServer"
+            BuildableName = "SideServer.app"
+            BlueprintName = "SideServer"
             ReferencedContainer = "container:AltStore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
