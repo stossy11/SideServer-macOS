@@ -102,7 +102,7 @@ extension ALTDeviceManager
                                                 if !url.isFileURL
                                                 {
                                                     // Show alert before downloading remote .ipa.
-                                                    self.showInstallationAlert(appName: NSLocalizedString("AltStore", comment: ""), deviceName: device.name)
+                                                    self.showInstallationAlert(appName: NSLocalizedString("SideStore", comment: ""), deviceName: device.name)
                                                 }
                                                 
                                                 self.prepare(device) { (result) in
