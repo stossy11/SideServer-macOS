@@ -10,6 +10,9 @@
 		0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
 		03ACA62D2942527D00AC9F17 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = 03ACA62B2942527D00AC9F17 /* userpref.c */; };
 		03ACA62E2942527D00AC9F17 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = 03ACA62C2942527D00AC9F17 /* userpref.h */; };
+		7D1E440D296F44190043B662 /* AuthKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1E440C296F44190043B662 /* AuthKit.tbd */; };
+		7D1E440F296F441C0043B662 /* AOSKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1E440E296F441B0043B662 /* AOSKit.tbd */; };
+		7D651C2D296F34DD00DE289E /* AOSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D651C2C296F34DD00DE289E /* AOSKit.m */; };
 		B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FB284F3B2400DA9E2F /* Sparkle */; };
 		B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */ = {isa = PBXBuildFile; productRef = B3C395FE284F3C0900DA9E2F /* STPrivilegedTask */; };
 		BF0241AA22F29CCD00129732 /* UserDefaults+AltServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0241A922F29CCD00129732 /* UserDefaults+AltServer.swift */; };
@@ -74,8 +77,6 @@
 		BF4588262298D3AB00BD7491 /* lockdown.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4587F62298D3AB00BD7491 /* lockdown.c */; };
 		BF4588272298D3AB00BD7491 /* service.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4587F72298D3AB00BD7491 /* service.c */; };
 		BF4588332298D3C100BD7491 /* socket.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4588292298D3C000BD7491 /* socket.h */; };
-		BF4588342298D3C100BD7491 /* userpref.h in Headers */ = {isa = PBXBuildFile; fileRef = BF45882A2298D3C000BD7491 /* userpref.h */; };
-		BF4588352298D3C100BD7491 /* userpref.c in Sources */ = {isa = PBXBuildFile; fileRef = BF45882B2298D3C000BD7491 /* userpref.c */; };
 		BF4588362298D3C100BD7491 /* debug.h in Headers */ = {isa = PBXBuildFile; fileRef = BF45882C2298D3C000BD7491 /* debug.h */; };
 		BF4588372298D3C100BD7491 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = BF45882D2298D3C000BD7491 /* utils.c */; };
 		BF4588392298D3C100BD7491 /* socket.c in Sources */ = {isa = PBXBuildFile; fileRef = BF45882F2298D3C000BD7491 /* socket.c */; };
@@ -87,17 +88,11 @@
 		BF45884A2298D55000BD7491 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4588482298D55000BD7491 /* thread.c */; };
 		BF45884B2298D55000BD7491 /* thread.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4588492298D55000BD7491 /* thread.h */; };
 		BF541C0B25E5A5FA00CD46B2 /* FileManager+URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF541C0A25E5A5FA00CD46B2 /* FileManager+URLs.swift */; };
-		BF5C5FCF237DF69100EDD0C6 /* ALTPluginService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */; };
 		BF718BD123C91BD300A89F2D /* ALTWiredConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF718BD023C91BD300A89F2D /* ALTWiredConnection.mm */; };
 		BF718BD523C928A300A89F2D /* ALTNotificationConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF718BD423C928A300A89F2D /* ALTNotificationConnection.mm */; };
-		BF77A67025795A5600BFE477 /* AltXPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77A66F25795A5600BFE477 /* AltXPC.swift */; };
-		BF77A67E25795BBE00BFE477 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77A67D25795BBE00BFE477 /* main.swift */; };
 		BF904DEA265DAE9A00E86C2A /* InstalledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF904DE9265DAE9A00E86C2A /* InstalledApp.swift */; };
 		BFAD678E25E0649500D4C4D1 /* ALTDebugConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFAD678D25E0649500D4C4D1 /* ALTDebugConnection.mm */; };
 		BFAD67A325E0854500D4C4D1 /* DeveloperDiskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD67A225E0854500D4C4D1 /* DeveloperDiskManager.swift */; };
-		BFB49AAA23834CF900D542D9 /* ALTAnisetteData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */; };
-		BFC15ADA27BC352300ED2FB4 /* PluginVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC15AD927BC352300ED2FB4 /* PluginVersion.swift */; };
-		BFC712BB2512B9CF00AB5EBE /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC712BA2512B9CF00AB5EBE /* PluginManager.swift */; };
 		BFD52C0122A1A9CB000B7ED1 /* ptrarray.c in Sources */ = {isa = PBXBuildFile; fileRef = BFD52BE522A1A9CA000B7ED1 /* ptrarray.c */; };
 		BFD52C0222A1A9CB000B7ED1 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = BFD52BE622A1A9CA000B7ED1 /* base64.c */; };
 		BFD52C0322A1A9CB000B7ED1 /* hashtable.c in Sources */ = {isa = PBXBuildFile; fileRef = BFD52BE722A1A9CA000B7ED1 /* hashtable.c */; };
@@ -130,7 +125,6 @@
 		BFD52C2122A1A9EC000B7ED1 /* node_list.c in Sources */ = {isa = PBXBuildFile; fileRef = BFD52C1E22A1A9EC000B7ED1 /* node_list.c */; };
 		BFD52C2222A1A9EC000B7ED1 /* cnary.c in Sources */ = {isa = PBXBuildFile; fileRef = BFD52C1F22A1A9EC000B7ED1 /* cnary.c */; };
 		BFE48975238007CE003239E0 /* AnisetteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE48974238007CE003239E0 /* AnisetteDataManager.swift */; };
-		BFE4FFB6251BF7BA0018CF9B /* AltPlugin.zip in Resources */ = {isa = PBXBuildFile; fileRef = BFE4FFB5251BF7BA0018CF9B /* AltPlugin.zip */; };
 		BFE972E3260A8B2700D0BDAC /* NSError+libimobiledevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFE972E2260A8B2700D0BDAC /* NSError+libimobiledevice.mm */; };
 		BFECAC7F24FD950B0077C41F /* CodableServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD44605241188C300EAB90A /* CodableServerError.swift */; };
 		BFECAC8024FD950B0077C41F /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18BFF22485828200DD5981 /* ConnectionManager.swift */; };
@@ -146,9 +140,6 @@
 		BFF0394B25F0551600BE607D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0394A25F0551600BE607D /* MenuController.swift */; };
 		BFF435D9255CBDAB00DD724F /* ALTApplication+AltStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF435D7255CBDAB00DD724F /* ALTApplication+AltStoreApp.swift */; };
 		BFF767C82489A74E0097E58C /* WirelessConnectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF767C72489A74E0097E58C /* WirelessConnectionHandler.swift */; };
-		BFF7C90F257844C900E55F36 /* AltXPC.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = BFF7C904257844C900E55F36 /* AltXPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BFF7C920257844FA00E55F36 /* ALTPluginService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */; };
-		BFF7C9342578492100E55F36 /* ALTAnisetteData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */; };
 		D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D58D5F2D26DFE68E00E55E38 /* LaunchAtLogin */; };
 		E7DBFE2F294DD208002602A4 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E7DBFE2E294DD208002602A4 /* KeychainAccess */; };
 		E7DBFE32294DD6D1002602A4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DBFE31294DD6D1002602A4 /* Keychain.swift */; };
@@ -162,13 +153,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BF45872A2298D31600BD7491;
 			remoteInfo = libimobiledevice;
-		};
-		BFF7C90D257844C900E55F36 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFD247622284B9A500981D42 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BFF7C903257844C900E55F36;
-			remoteInfo = AltXPC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -185,32 +169,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF5C5FE9237E438C00EDD0C6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFF7C910257844C900E55F36 /* Embed XPC Services */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
-			dstSubfolderSpec = 16;
-			files = (
-				BFF7C90F257844C900E55F36 /* AltXPC.xpc in Embed XPC Services */,
-			);
-			name = "Embed XPC Services";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		03ACA62B2942527D00AC9F17 /* userpref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userpref.c; path = Dependencies/libimobiledevice/common/userpref.c; sourceTree = SOURCE_ROOT; };
 		03ACA62C2942527D00AC9F17 /* userpref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userpref.h; path = Dependencies/libimobiledevice/common/userpref.h; sourceTree = SOURCE_ROOT; };
-		B3146EC5284F57EF00BBC3FD /* AltSign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AltSign; path = Dependencies/AltSign; sourceTree = "<group>"; };
+		7D1E440B296F3DEE0043B662 /* AltSign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AltSign; path = Dependencies/AltSign; sourceTree = "<group>"; };
+		7D1E440C296F44190043B662 /* AuthKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = AuthKit.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit.tbd; sourceTree = DEVELOPER_DIR; };
+		7D1E440E296F441B0043B662 /* AOSKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = AOSKit.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/AOSKit.tbd; sourceTree = DEVELOPER_DIR; };
+		7D651C2A296F329900DE289E /* AOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOSKit.h; sourceTree = "<group>"; };
+		7D651C2C296F34DD00DE289E /* AOSKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOSKit.m; sourceTree = "<group>"; };
 		B3C39606284F4C8400DA9E2F /* CodeSigning.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B3C39607284F4C8400DA9E2F /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
 		B3C39608284F4C8400DA9E2F /* CodeSigning.xcconfig.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeSigning.xcconfig.sample; sourceTree = "<group>"; };
@@ -302,10 +270,6 @@
 		BF4588492298D55000BD7491 /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = thread.h; path = Dependencies/libusbmuxd/common/thread.h; sourceTree = SOURCE_ROOT; };
 		BF541C0A25E5A5FA00CD46B2 /* FileManager+URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+URLs.swift"; sourceTree = "<group>"; };
 		BF580497246A3D19008AE704 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		BF5C5FC5237DF5AE00EDD0C6 /* AltPlugin.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AltPlugin.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF5C5FC7237DF5AE00EDD0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF5C5FCD237DF69100EDD0C6 /* ALTPluginService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTPluginService.h; sourceTree = "<group>"; };
-		BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTPluginService.m; sourceTree = "<group>"; };
 		BF6C336124197D700034FD24 /* NSError+AltStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+AltStore.swift"; sourceTree = "<group>"; };
 		BF718BC723C919CC00A89F2D /* CFNotificationName+AltStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFNotificationName+AltStore.h"; sourceTree = "<group>"; };
 		BF718BC823C919E300A89F2D /* CFNotificationName+AltStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CFNotificationName+AltStore.m"; sourceTree = "<group>"; };
@@ -316,20 +280,12 @@
 		BF718BD423C928A300A89F2D /* ALTNotificationConnection.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ALTNotificationConnection.mm; sourceTree = "<group>"; };
 		BF718BD623C92B3700A89F2D /* ALTNotificationConnection+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALTNotificationConnection+Private.h"; sourceTree = "<group>"; };
 		BF718BD723C93DB700A89F2D /* ALTConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTConstants.m; sourceTree = "<group>"; };
-		BF77A66E25795A5600BFE477 /* AltXPC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AltXPC-Bridging-Header.h"; sourceTree = "<group>"; };
-		BF77A66F25795A5600BFE477 /* AltXPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltXPC.swift; sourceTree = "<group>"; };
-		BF77A67D25795BBE00BFE477 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF904DE9265DAE9A00E86C2A /* InstalledApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApp.swift; sourceTree = "<group>"; };
 		BFAD678C25E0649500D4C4D1 /* ALTDebugConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTDebugConnection.h; sourceTree = "<group>"; };
 		BFAD678D25E0649500D4C4D1 /* ALTDebugConnection.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ALTDebugConnection.mm; sourceTree = "<group>"; };
 		BFAD679525E064D400D4C4D1 /* ALTDebugConnection+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALTDebugConnection+Private.h"; sourceTree = "<group>"; };
 		BFAD67A225E0854500D4C4D1 /* DeveloperDiskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperDiskManager.swift; sourceTree = "<group>"; };
-		BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALTAnisetteData.m; path = "Dependencies/AltSign/AltSign/Model/Apple API/ALTAnisetteData.m"; sourceTree = SOURCE_ROOT; };
-		BFB49AA923834CF900D542D9 /* ALTAnisetteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALTAnisetteData.h; path = "Dependencies/AltSign/AltSign/Model/Apple API/ALTAnisetteData.h"; sourceTree = SOURCE_ROOT; };
 		BFBAC8852295C90300587369 /* Result+Conveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Conveniences.swift"; sourceTree = "<group>"; };
-		BFC15AD927BC352300ED2FB4 /* PluginVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginVersion.swift; sourceTree = "<group>"; };
-		BFC712BA2512B9CF00AB5EBE /* PluginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginManager.swift; sourceTree = "<group>"; };
-		BFC712C12512D5F100AB5EBE /* XPCConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPCConnection.swift; sourceTree = "<group>"; };
 		BFD44605241188C300EAB90A /* CodableServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableServerError.swift; sourceTree = "<group>"; };
 		BFD52BD222A06EFB000B7ED1 /* ALTConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTConstants.h; sourceTree = "<group>"; };
 		BFD52BE522A1A9CA000B7ED1 /* ptrarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ptrarray.c; path = Dependencies/libplist/src/ptrarray.c; sourceTree = SOURCE_ROOT; };
@@ -364,7 +320,6 @@
 		BFD52C1E22A1A9EC000B7ED1 /* node_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = node_list.c; path = Dependencies/libplist/libcnary/node_list.c; sourceTree = SOURCE_ROOT; };
 		BFD52C1F22A1A9EC000B7ED1 /* cnary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cnary.c; path = Dependencies/libplist/libcnary/cnary.c; sourceTree = SOURCE_ROOT; };
 		BFE48974238007CE003239E0 /* AnisetteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnisetteDataManager.swift; sourceTree = "<group>"; };
-		BFE4FFB5251BF7BA0018CF9B /* AltPlugin.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = AltPlugin.zip; sourceTree = "<group>"; };
 		BFE972E1260A8B2700D0BDAC /* NSError+libimobiledevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+libimobiledevice.h"; sourceTree = "<group>"; };
 		BFE972E2260A8B2700D0BDAC /* NSError+libimobiledevice.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSError+libimobiledevice.mm"; sourceTree = "<group>"; };
 		BFF0394A25F0551600BE607D /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -372,10 +327,6 @@
 		BFF767C72489A74E0097E58C /* WirelessConnectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessConnectionHandler.swift; sourceTree = "<group>"; };
 		BFF767CB2489AB5C0097E58C /* ALTServerError+Conveniences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ALTServerError+Conveniences.swift"; sourceTree = "<group>"; };
 		BFF767CD2489ABE90097E58C /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		BFF7C904257844C900E55F36 /* AltXPC.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = AltXPC.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFF7C906257844C900E55F36 /* AltXPCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AltXPCProtocol.h; sourceTree = "<group>"; };
-		BFF7C90C257844C900E55F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFF7C93B257849C600E55F36 /* AltXPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AltXPC.entitlements; sourceTree = "<group>"; };
 		D533E8B62727841800A9B5DD /* libAppleArchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAppleArchive.tbd; path = usr/lib/libAppleArchive.tbd; sourceTree = SDKROOT; };
 		E7DBFE31294DD6D1002602A4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		E7DBFE36294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDAuthenticationAlert.swift; sourceTree = "<group>"; };
@@ -393,37 +344,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1E440F296F441C0043B662 /* AOSKit.tbd in Frameworks */,
 				D58D5F2E26DFE68E00E55E38 /* LaunchAtLogin in Frameworks */,
 				B3C395FF284F3C0900DA9E2F /* STPrivilegedTask in Frameworks */,
 				E7DBFE2F294DD208002602A4 /* KeychainAccess in Frameworks */,
 				BF088D382501A833008082D9 /* OpenSSL.xcframework in Frameworks */,
 				0380808A28C6E10300C653E1 /* libimobiledevice.a in Frameworks */,
+				7D1E440D296F44190043B662 /* AuthKit.tbd in Frameworks */,
 				B3C395FC284F3B2400DA9E2F /* Sparkle in Frameworks */,
 				BF088D362501A821008082D9 /* AltSign-Dynamic in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF5C5FC2237DF5AE00EDD0C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFF7C901257844C900E55F36 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D651C29296F328000DE289E /* AOSKit */ = {
+			isa = PBXGroup;
+			children = (
+				7D1E440E296F441B0043B662 /* AOSKit.tbd */,
+				7D1E440C296F44190043B662 /* AuthKit.tbd */,
+				7D651C2C296F34DD00DE289E /* AOSKit.m */,
+				7D651C2A296F329900DE289E /* AOSKit.h */,
+			);
+			path = AOSKit;
+			sourceTree = "<group>";
+		};
 		B3146EC4284F57EF00BBC3FD /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				B3146EC5284F57EF00BBC3FD /* AltSign */,
+				7D1E440B296F3DEE0043B662 /* AltSign */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -454,7 +404,6 @@
 				BF18BFFF2485A75F00DD5981 /* Server Protocol */,
 				E7DBFE30294DD6C3002602A4 /* Components */,
 				BFF767CF2489AC240097E58C /* Connections */,
-				BFF7C92D2578464D00E55F36 /* XPC */,
 				BFF767C32489A6800097E58C /* Extensions */,
 				BFF767C42489A6980097E58C /* Categories */,
 			);
@@ -467,10 +416,10 @@
 				BF45868F229872EA00BD7491 /* AppDelegate.swift */,
 				BF458695229872EA00BD7491 /* Main.storyboard */,
 				BFE48974238007CE003239E0 /* AnisetteDataManager.swift */,
+				7D651C29296F328000DE289E /* AOSKit */,
 				BFAD67A225E0854500D4C4D1 /* DeveloperDiskManager.swift */,
 				BFF0394A25F0551600BE607D /* MenuController.swift */,
 				BF904DE9265DAE9A00E86C2A /* InstalledApp.swift */,
-				BFC15ADB27BC3AD100ED2FB4 /* Plugin */,
 				BF703195229F36FF006E110F /* Devices */,
 				BFD52BDC22A0A659000B7ED1 /* Connections */,
 				BF055B4A233B528B0086DEA9 /* Extensions */,
@@ -623,22 +572,9 @@
 			name = libcnary;
 			sourceTree = "<group>";
 		};
-		BF5C5FC6237DF5AE00EDD0C6 /* AltPlugin */ = {
-			isa = PBXGroup;
-			children = (
-				BF5C5FCD237DF69100EDD0C6 /* ALTPluginService.h */,
-				BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */,
-				BFB49AA923834CF900D542D9 /* ALTAnisetteData.h */,
-				BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */,
-				BF5C5FC7237DF5AE00EDD0C6 /* Info.plist */,
-			);
-			path = AltPlugin;
-			sourceTree = "<group>";
-		};
 		BF703194229F36F6006E110F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BFE4FFB5251BF7BA0018CF9B /* AltPlugin.zip */,
 				BF458693229872EA00BD7491 /* Assets.xcassets */,
 			);
 			name = Resources;
@@ -664,15 +600,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BFC15ADB27BC3AD100ED2FB4 /* Plugin */ = {
-			isa = PBXGroup;
-			children = (
-				BFC15AD927BC352300ED2FB4 /* PluginVersion.swift */,
-				BFC712BA2512B9CF00AB5EBE /* PluginManager.swift */,
-			);
-			path = Plugin;
-			sourceTree = "<group>";
-		};
 		BFD247612284B9A500981D42 = {
 			isa = PBXGroup;
 			children = (
@@ -684,8 +611,6 @@
 				BF45868E229872EA00BD7491 /* AltServer */,
 				BF1E315122A0616100370A3C /* Shared */,
 				BF45872C2298D31600BD7491 /* libimobiledevice */,
-				BF5C5FC6237DF5AE00EDD0C6 /* AltPlugin */,
-				BFF7C905257844C900E55F36 /* AltXPC */,
 				BFD247852284BB3300981D42 /* Frameworks */,
 				B3146EC4284F57EF00BBC3FD /* Packages */,
 				BFD2476B2284B9A500981D42 /* Products */,
@@ -697,8 +622,6 @@
 			children = (
 				BF45868D229872EA00BD7491 /* SideServer.app */,
 				BF45872B2298D31600BD7491 /* libimobiledevice.a */,
-				BF5C5FC5237DF5AE00EDD0C6 /* AltPlugin.mailbundle */,
-				BFF7C904257844C900E55F36 /* AltXPC.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -772,29 +695,8 @@
 				BF18BFFE2485A42800DD5981 /* ALTConnection.h */,
 				BF18BFF624858BDE00DD5981 /* Connection.swift */,
 				BFF767CD2489ABE90097E58C /* NetworkConnection.swift */,
-				BFC712C12512D5F100AB5EBE /* XPCConnection.swift */,
 			);
 			path = Connections;
-			sourceTree = "<group>";
-		};
-		BFF7C905257844C900E55F36 /* AltXPC */ = {
-			isa = PBXGroup;
-			children = (
-				BFF7C93B257849C600E55F36 /* AltXPC.entitlements */,
-				BF77A67D25795BBE00BFE477 /* main.swift */,
-				BF77A66F25795A5600BFE477 /* AltXPC.swift */,
-				BF77A66E25795A5600BFE477 /* AltXPC-Bridging-Header.h */,
-				BFF7C90C257844C900E55F36 /* Info.plist */,
-			);
-			path = AltXPC;
-			sourceTree = "<group>";
-		};
-		BFF7C92D2578464D00E55F36 /* XPC */ = {
-			isa = PBXGroup;
-			children = (
-				BFF7C906257844C900E55F36 /* AltXPCProtocol.h */,
-			);
-			path = XPC;
 			sourceTree = "<group>";
 		};
 		E7DBFE30294DD6C3002602A4 /* Components */ = {
@@ -845,7 +747,6 @@
 				BFD52C1622A1A9CB000B7ED1 /* bytearray.h in Headers */,
 				BFD52C1222A1A9CB000B7ED1 /* base64.h in Headers */,
 				BF4588192298D3AB00BD7491 /* webinspector.h in Headers */,
-				BF4588342298D3C100BD7491 /* userpref.h in Headers */,
 				BF45880A2298D3AB00BD7491 /* screenshotr.h in Headers */,
 				BF45883C2298D3C100BD7491 /* utils.h in Headers */,
 				BFD52C0B22A1A9CB000B7ED1 /* hashtable.h in Headers */,
@@ -875,12 +776,10 @@
 				BF0201BC22C2EFA3000B93E4 /* Embed Frameworks */,
 				BF7FDA2C23203B6B00B5D3A4 /* Copy Launcher App */,
 				BF914C242383659400E713BA /* Sign Frameworks */,
-				BFF7C910257844C900E55F36 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BFF7C90E257844C900E55F36 /* PBXTargetDependency */,
 				0380808C28C6E10300C653E1 /* PBXTargetDependency */,
 			);
 			name = SideServer;
@@ -912,41 +811,6 @@
 			productReference = BF45872B2298D31600BD7491 /* libimobiledevice.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		BF5C5FC4237DF5AE00EDD0C6 /* AltPlugin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF5C5FC8237DF5AE00EDD0C6 /* Build configuration list for PBXNativeTarget "AltPlugin" */;
-			buildPhases = (
-				BF5C5FC1237DF5AE00EDD0C6 /* Sources */,
-				BF5C5FC2237DF5AE00EDD0C6 /* Frameworks */,
-				BF5C5FC3237DF5AE00EDD0C6 /* Resources */,
-				BF5C5FE9237E438C00EDD0C6 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AltPlugin;
-			productName = AltPlugin;
-			productReference = BF5C5FC5237DF5AE00EDD0C6 /* AltPlugin.mailbundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		BFF7C903257844C900E55F36 /* AltXPC */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BFF7C913257844C900E55F36 /* Build configuration list for PBXNativeTarget "AltXPC" */;
-			buildPhases = (
-				BFF7C900257844C900E55F36 /* Sources */,
-				BFF7C901257844C900E55F36 /* Frameworks */,
-				BFF7C902257844C900E55F36 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AltXPC;
-			productName = AltXPC;
-			productReference = BFF7C904257844C900E55F36 /* AltXPC.xpc */;
-			productType = "com.apple.product-type.xpc-service";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -954,7 +818,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = "Riley Testut";
 				TargetAttributes = {
 					BF45868C229872EA00BD7491 = {
@@ -971,14 +835,6 @@
 					};
 					BF45872A2298D31600BD7491 = {
 						CreatedOnToolsVersion = 10.2.1;
-					};
-					BF5C5FC4237DF5AE00EDD0C6 = {
-						CreatedOnToolsVersion = 11.2;
-						LastSwiftMigration = 1120;
-					};
-					BFF7C903257844C900E55F36 = {
-						CreatedOnToolsVersion = 12.3;
-						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -1005,8 +861,6 @@
 			targets = (
 				BF45868C229872EA00BD7491 /* SideServer */,
 				BF45872A2298D31600BD7491 /* libimobiledevice */,
-				BF5C5FC4237DF5AE00EDD0C6 /* AltPlugin */,
-				BFF7C903257844C900E55F36 /* AltXPC */,
 			);
 		};
 /* End PBXProject section */
@@ -1016,23 +870,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFE4FFB6251BF7BA0018CF9B /* AltPlugin.zip in Resources */,
 				BF458694229872EA00BD7491 /* Assets.xcassets in Resources */,
 				BF458697229872EA00BD7491 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF5C5FC3237DF5AE00EDD0C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFF7C902257844C900E55F36 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,13 +925,12 @@
 				BFF0394B25F0551600BE607D /* MenuController.swift in Sources */,
 				E7DBFE37294DDD4F002602A4 /* AppleIDAuthenticationAlert.swift in Sources */,
 				BFECAC8024FD950B0077C41F /* ConnectionManager.swift in Sources */,
-				BFC15ADA27BC352300ED2FB4 /* PluginVersion.swift in Sources */,
 				BFECAC8324FD950B0077C41F /* NetworkConnection.swift in Sources */,
+				7D651C2D296F34DD00DE289E /* AOSKit.m in Sources */,
 				BF541C0B25E5A5FA00CD46B2 /* FileManager+URLs.swift in Sources */,
 				BFECAC8724FD950B0077C41F /* Bundle+AltStore.swift in Sources */,
 				BF3F786422CAA41E008FBD20 /* ALTDeviceManager+Installation.swift in Sources */,
 				BF18BFFD2485A1E400DD5981 /* WiredConnectionHandler.swift in Sources */,
-				BFC712BB2512B9CF00AB5EBE /* PluginManager.swift in Sources */,
 				BFECAC8224FD950B0077C41F /* ServerProtocol.swift in Sources */,
 				BFECAC8124FD950B0077C41F /* ALTServerError+Conveniences.swift in Sources */,
 				BFECAC7F24FD950B0077C41F /* CodableServerError.swift in Sources */,
@@ -1154,7 +992,6 @@
 				BFD52C0F22A1A9CB000B7ED1 /* Real.cpp in Sources */,
 				BF45884A2298D55000BD7491 /* thread.c in Sources */,
 				BF4587FB2298D3AB00BD7491 /* notification_proxy.c in Sources */,
-				BF4588352298D3C100BD7491 /* userpref.c in Sources */,
 				BFD52C0122A1A9CB000B7ED1 /* ptrarray.c in Sources */,
 				BFD52C0E22A1A9CB000B7ED1 /* Boolean.cpp in Sources */,
 				BFD52C0822A1A9CB000B7ED1 /* time64.c in Sources */,
@@ -1180,26 +1017,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF5C5FC1237DF5AE00EDD0C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFB49AAA23834CF900D542D9 /* ALTAnisetteData.m in Sources */,
-				BF5C5FCF237DF69100EDD0C6 /* ALTPluginService.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFF7C900257844C900E55F36 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFF7C9342578492100E55F36 /* ALTAnisetteData.m in Sources */,
-				BFF7C920257844FA00E55F36 /* ALTPluginService.m in Sources */,
-				BF77A67E25795BBE00BFE477 /* main.swift in Sources */,
-				BF77A67025795A5600BFE477 /* AltXPC.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1207,11 +1024,6 @@
 			isa = PBXTargetDependency;
 			target = BF45872A2298D31600BD7491 /* libimobiledevice */;
 			targetProxy = 0380808B28C6E10300C653E1 /* PBXContainerItemProxy */;
-		};
-		BFF7C90E257844C900E55F36 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BFF7C903257844C900E55F36 /* AltXPC */;
-			targetProxy = BFF7C90D257844C900E55F36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1238,7 +1050,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = FG2QCTR4AW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1269,9 +1082,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.5.1b;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltServer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.f1shy-dev.SideServer.mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
@@ -1292,7 +1105,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 66;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = FG2QCTR4AW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1323,9 +1137,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.5.1b;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltServer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.f1shy-dev.SideServer.mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
@@ -1339,6 +1153,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
@@ -1365,7 +1180,7 @@
 					"\"${SDKROOT}/usr/include/libxml2\"",
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/libzip/xcode\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = imobiledevice;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1377,6 +1192,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
@@ -1403,71 +1219,10 @@
 					"\"${SDKROOT}/usr/include/libxml2\"",
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/libzip/xcode\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = imobiledevice;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BF5C5FC9237DF5AE00EDD0C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				INFOPLIST_FILE = AltPlugin/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles/";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"/Users/Riley/Library/Developer/Xcode/DerivedData/AltStore-bhqnkrahfutztzeudtxhcxccgtlo/Build/Products/Debug",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltPlugin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				WRAPPER_EXTENSION = mailbundle;
-			};
-			name = Debug;
-		};
-		BF5C5FCA237DF5AE00EDD0C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				INFOPLIST_FILE = AltPlugin/Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles/";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"/Users/Riley/Library/Developer/Xcode/DerivedData/AltStore-bhqnkrahfutztzeudtxhcxccgtlo/Build/Products/Debug",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltPlugin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
-				WRAPPER_EXTENSION = mailbundle;
 			};
 			name = Release;
 		};
@@ -1498,6 +1253,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1507,6 +1263,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1566,6 +1323,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1575,6 +1333,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1601,66 +1360,6 @@
 			};
 			name = Release;
 		};
-		BFF7C911257844C900E55F36 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3C3960C284F4CDC00DA9E2F /* AltXPC.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = AltXPC/AltXPC.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = AltXPC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltXPC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AltXPC/AltXPC-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		BFF7C912257844C900E55F36 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3C3960C284F4CDC00DA9E2F /* AltXPC.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = AltXPC/AltXPC.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = AltXPC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltXPC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AltXPC/AltXPC-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1682,29 +1381,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF5C5FC8237DF5AE00EDD0C6 /* Build configuration list for PBXNativeTarget "AltPlugin" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF5C5FC9237DF5AE00EDD0C6 /* Debug */,
-				BF5C5FCA237DF5AE00EDD0C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BFD247652284B9A500981D42 /* Build configuration list for PBXProject "AltStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFD2477C2284B9A700981D42 /* Debug */,
 				BFD2477D2284B9A700981D42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BFF7C913257844C900E55F36 /* Build configuration list for PBXNativeTarget "AltXPC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BFF7C911257844C900E55F36 /* Debug */,
-				BFF7C912257844C900E55F36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

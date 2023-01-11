@@ -18,7 +18,7 @@
 
 #import <AppKit/AppKit.h>
 #import <UserNotifications/UserNotifications.h>
-#import "AltServer-Swift.h"
+#import "SideServer-Swift.h"
 
 #include <libimobiledevice/libimobiledevice.h>
 #include <libimobiledevice/lockdown.h>

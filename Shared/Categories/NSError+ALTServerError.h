@@ -43,7 +43,6 @@ typedef NS_ERROR_ENUM(AltServerErrorDomain, ALTServerError)
     ALTServerErrorUnknownResponse = 12,
     
     ALTServerErrorInvalidAnisetteData = 13,
-    ALTServerErrorPluginNotFound = 14,
     
     ALTServerErrorProfileNotFound = 15,
     

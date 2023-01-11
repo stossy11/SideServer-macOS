@@ -122,9 +122,6 @@ NSErrorUserInfoKey const ALTOperatingSystemVersionErrorKey = @"ALTOperatingSyste
         case ALTServerErrorInvalidAnisetteData:
             return NSLocalizedString(@"The provided anisette data is invalid.", @"");
             
-        case ALTServerErrorPluginNotFound:
-            return NSLocalizedString(@"AltServer could not connect to Mail plug-in.", @"");
-            
         case ALTServerErrorProfileNotFound:
             return [self profileErrorLocalizedDescriptionWithBaseDescription:NSLocalizedString(@"Could not find profile", "")];
             
@@ -156,9 +153,6 @@ NSErrorUserInfoKey const ALTOperatingSystemVersionErrorKey = @"ALTOperatingSyste
         case ALTServerErrorConnectionFailed:
         case ALTServerErrorDeviceNotFound:
             return NSLocalizedString(@"Make sure you have trusted this device with your computer and Wi-Fi sync is enabled.", @"");
-            
-        case ALTServerErrorPluginNotFound:
-            return NSLocalizedString(@"Mail has been automatically opened, try again in a moment. Otherwise, make sure plug-in is enabled in Mail's preferences.", @"");
             
         case ALTServerErrorMaximumFreeAppLimitReached:
 #if TARGET_OS_OSX
