@@ -21,7 +21,6 @@ extension ALTDevice: MenuDisplayable {}
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private let pluginManager = PluginManager()
     
     private var statusItem: NSStatusItem?
     
@@ -35,9 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet private var enableJITMenu: NSMenu!
     
     @IBOutlet private var launchAtLoginMenuItem: NSMenuItem!
-    @IBOutlet private var installMailPluginMenuItem: NSMenuItem!
-    @IBOutlet private var installAltStoreMenuItem: NSMenuItem!
     @IBOutlet private var sideloadAppMenuItem: NSMenuItem!
+    @IBOutlet private var installAltStoreMenuItem: NSMenuItem!
 	@IBOutlet private var logInMenuItem: NSMenuItem!
     
     private var connectedDevicesMenuController: MenuController<ALTDevice>!
@@ -45,9 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var enableJITMenuController: MenuController<ALTDevice>!
     
     private var _jitAppListMenuControllers = [AnyObject]()
-    
-    private var isAltPluginUpdateAvailable = false
-    
+        
     func applicationDidFinishLaunching(_ aNotification: Notification)
     {
         UserDefaults.standard.registerDefaults()
@@ -108,16 +104,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        self.pluginManager.isUpdateAvailable { result in
-            guard let isUpdateAvailable = try? result.get() else { return }
-            self.isAltPluginUpdateAvailable = isUpdateAvailable
-            
-            if isUpdateAvailable
-            {
-                self.installMailPlugin()
-            }
-        }
-
 		setupLoginMenuItem()
     }
 
@@ -240,46 +226,9 @@ private extension AppDelegate
                 }
             }
         }
-                
-        func install()
-        {
+
             ALTDeviceManager.shared.installApplication(at: url, to: device, appleID: username, password: password, completion: finish(_:))
-        }
         
-        AnisetteDataManager.shared.isXPCAvailable { isAvailable in
-            if isAvailable
-            {
-                // XPC service is available, so we don't need to install/update Mail plug-in.
-                // Users can still manually do so from the AltServer menu.
-                install()
-            }
-            else
-            {
-                self.pluginManager.isUpdateAvailable { result in
-                    switch result
-                    {
-                    case .failure(let error): finish(.failure(error))
-                    case .success(let isUpdateAvailable):
-                        self.isAltPluginUpdateAvailable = isUpdateAvailable
-                        
-                        if !self.pluginManager.isMailPluginInstalled || isUpdateAvailable
-                        {
-                            self.installMailPlugin { result in
-                                switch result
-                                {
-                                case .failure: break
-                                case .success: install()
-                                }
-                            }
-                        }
-                        else
-                        {
-                            install()
-                        }
-                    }
-                }
-            }
-        }
     }
     
     func showErrorAlert(error: Error, localizedFailure: String)
@@ -367,68 +316,7 @@ private extension AppDelegate
     {
         LaunchAtLogin.isEnabled.toggle()
     }
-    
-    @objc func handleInstallMailPluginMenuItem(_ item: NSMenuItem)
-    {
-        if !self.pluginManager.isMailPluginInstalled || self.isAltPluginUpdateAvailable
-        {
-            self.installMailPlugin()
-        }
-        else
-        {
-            self.uninstallMailPlugin()
-        }
-    }
-    
-    private func installMailPlugin(completion: ((Result<Void, Error>) -> Void)? = nil)
-    {
-        self.pluginManager.installMailPlugin { (result) in
-            DispatchQueue.main.async {
-                switch result
-                {
-                case .failure(PluginError.cancelled): break
-                case .failure(let error):
-                    let alert = NSAlert()
-                    alert.messageText = NSLocalizedString("Failed to Install Mail Plug-in", comment: "")
-                    alert.informativeText = error.localizedDescription
-                    alert.runModal()
-                    
-                case .success:
-                    let alert = NSAlert()
-                    alert.messageText = NSLocalizedString("Mail Plug-in Installed", comment: "")
-                    alert.informativeText = NSLocalizedString("Please restart Mail and enable AltPlugin in Mail's Preferences. Mail must be running when installing or refreshing apps with AltServer.", comment: "")
-                    alert.runModal()
-                    
-                    self.isAltPluginUpdateAvailable = false
-                }
-                
-                completion?(result)
-            }
-        }
-    }
-    
-    private func uninstallMailPlugin()
-    {
-        self.pluginManager.uninstallMailPlugin { (result) in
-            DispatchQueue.main.async {
-                switch result
-                {
-                case .failure(PluginError.cancelled): break
-                case .failure(let error):
-                    let alert = NSAlert()
-                    alert.messageText = NSLocalizedString("Failed to Uninstall Mail Plug-in", comment: "")
-                    alert.informativeText = error.localizedDescription
-                    alert.runModal()
-                    
-                case .success:
-                    let alert = NSAlert()
-                    alert.messageText = NSLocalizedString("Mail Plug-in Uninstalled", comment: "")
-                    alert.informativeText = NSLocalizedString("Please restart Mail for changes to take effect. You will not be able to use AltServer until the plug-in is reinstalled.", comment: "")
-                    alert.runModal()
-                }
-            }
-        }
-    }
+
 }
 
 // MARK: - AppDelegate+loginMenuItem
@@ -501,21 +389,6 @@ extension AppDelegate: NSMenuDelegate
         self.launchAtLoginMenuItem.target = self
         self.launchAtLoginMenuItem.action = #selector(AppDelegate.toggleLaunchAtLogin(_:))
         self.launchAtLoginMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
-
-        if self.isAltPluginUpdateAvailable
-        {
-            self.installMailPluginMenuItem.title = NSLocalizedString("Update Mail Plug-in…", comment: "")
-        }
-        else if self.pluginManager.isMailPluginInstalled
-        {
-            self.installMailPluginMenuItem.title = NSLocalizedString("Uninstall Mail Plug-in…", comment: "")
-        }
-        else
-        {
-            self.installMailPluginMenuItem.title = NSLocalizedString("Install Mail Plug-in…", comment: "")
-        }
-        self.installMailPluginMenuItem.target = self
-        self.installMailPluginMenuItem.action = #selector(AppDelegate.handleInstallMailPluginMenuItem(_:))
         
         // Need to re-set this every time menu appears so we can refresh device app list.
         self.enableJITMenuController.submenuHandler = { [weak self] device in
@@ -590,8 +463,10 @@ extension AppDelegate: NSMenuDelegate
         let previousItem: NSMenuItem
         switch item
         {
-        case self.sideloadAppMenuItem: previousItem = self.installAltStoreMenuItem
-        case self.installAltStoreMenuItem: previousItem = self.sideloadAppMenuItem
+        case self.sideloadAppMenuItem:
+            previousItem = self.installAltStoreMenuItem
+        case self.installAltStoreMenuItem:
+            previousItem = self.sideloadAppMenuItem
         default: return
         }
 

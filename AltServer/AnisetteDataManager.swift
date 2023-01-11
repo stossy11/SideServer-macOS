@@ -13,10 +13,15 @@ private extension Bundle
 {
     struct ID
     {
-        static let mail = "com.apple.mail"
-        static let altXPC = "com.rileytestut.AltXPC"
-    }
+        static let mail = "com.apple.mail"    }
 }
+
+enum AnisetteFetchError: LocalizedError
+{
+    case unknownError
+}
+
+
 
 private extension ALTAnisetteData
 {
@@ -38,13 +43,6 @@ class AnisetteDataManager: NSObject
     private var anisetteDataCompletionHandlers: [String: (Result<ALTAnisetteData, Error>) -> Void] = [:]
     private var anisetteDataTimers: [String: Timer] = [:]
     
-    private lazy var xpcConnection: NSXPCConnection = {
-        let connection = NSXPCConnection(serviceName: Bundle.ID.altXPC)
-        connection.remoteObjectInterface = NSXPCInterface(with: AltXPCProtocol.self)
-        connection.resume()
-        return connection
-    }()
-    
     private override init()
     {
         super.init()
@@ -52,86 +50,18 @@ class AnisetteDataManager: NSObject
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(AnisetteDataManager.handleAnisetteDataResponse(_:)), name: Notification.Name("com.rileytestut.AltServer.AnisetteDataResponse"), object: nil)
     }
     
-    func requestAnisetteData(_ completion: @escaping (Result<ALTAnisetteData, Error>) -> Void)
+    func requestAnisetteData(_ completion: @escaping (Result<ALTAnisetteData, AnisetteFetchError>) -> Void)
     {
-        if #available(macOS 10.15, *)
-        {
-            self.requestAnisetteDataFromXPCService { (result) in
-                do
-                {
-                    let anisetteData = try result.get()
-                    completion(.success(anisetteData))
-                }
-                catch CocoaError.xpcConnectionInterrupted
-                {
-                    // SIP and/or AMFI are not disabled, so fall back to Mail plug-in.
-                    self.requestAnisetteDataFromPlugin { (result) in
-                        completion(result)
-                    }
-                }
-                catch
-                {
-                    completion(.failure(error))
-                }
-            }
+        guard let anisette = AOSKit.getAnisetteData() else {
+            completion(.failure(.unknownError))
+            return
         }
-        else
-        {
-            self.requestAnisetteDataFromPlugin { (result) in
-                completion(result)
-            }
-        }
-    }
-    
-    func isXPCAvailable(completion: @escaping (Bool) -> Void)
-    {
-        guard let proxy = self.xpcConnection.remoteObjectProxyWithErrorHandler({ (error) in
-            completion(false)
-        }) as? AltXPCProtocol else { return }
-        
-        proxy.ping {
-            completion(true)
-        }
+        completion(.success(anisette))
     }
 }
 
 private extension AnisetteDataManager
 {
-    @available(macOS 10.15, *)
-    func requestAnisetteDataFromXPCService(completion: @escaping (Result<ALTAnisetteData, Error>) -> Void)
-    {
-        guard let proxy = self.xpcConnection.remoteObjectProxyWithErrorHandler({ (error) in
-            print("Anisette XPC Error:", error)
-            completion(.failure(error))
-        }) as? AltXPCProtocol else { return }
-        
-        proxy.requestAnisetteData { (anisetteData, error) in
-            anisetteData?.sanitize(byReplacingBundleID: Bundle.ID.altXPC)
-            completion(Result(anisetteData, error))
-        }
-    }
-    
-    func requestAnisetteDataFromPlugin(completion: @escaping (Result<ALTAnisetteData, Error>) -> Void)
-    {
-        let requestUUID = UUID().uuidString
-        self.anisetteDataCompletionHandlers[requestUUID] = completion
-        
-        let isMailRunning = NSWorkspace.shared.runningApplications.map { $0.bundleIdentifier }.contains { $0 == "com.apple.mail" }
-        
-        if !isMailRunning, let mailApp = FileManager.default.urls(for: .applicationDirectory,in: .systemDomainMask).first?.appendingPathComponent("Mail.app") {
-            NSWorkspace.shared.open(mailApp)
-        }
-        
-        let timer = Timer(timeInterval: 5.0, repeats: false) { (timer) in
-            self.finishRequest(forUUID: requestUUID, result: .failure(ALTServerError(.pluginNotFound)))
-        }
-        self.anisetteDataTimers[requestUUID] = timer
-        
-        RunLoop.main.add(timer, forMode: .default)
-        
-        DistributedNotificationCenter.default().postNotificationName(Notification.Name("com.rileytestut.AltServer.FetchAnisetteData"), object: nil, userInfo: ["requestUUID": requestUUID], options: .deliverImmediately)
-    }
-    
     @objc func handleAnisetteDataResponse(_ notification: Notification)
     {
         guard let userInfo = notification.userInfo, let requestUUID = userInfo["requestUUID"] as? String else { return }
