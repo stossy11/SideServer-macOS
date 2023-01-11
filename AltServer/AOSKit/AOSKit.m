@@ -24,9 +24,7 @@
     @"deviceUniqueIdentifier" : [device uniqueDeviceIdentifier]
   };
     
-    NSLog(@"%@", dict);
     ALTAnisetteData *data = [[ALTAnisetteData alloc] initWithJSON:dict];
-    NSLog(@"%@", data.description);
     return data;
 }
 
