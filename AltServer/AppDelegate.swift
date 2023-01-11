@@ -94,8 +94,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if !UserDefaults.standard.didPresentInitialNotification
             {
                 let content = UNMutableNotificationContent()
-                content.title = NSLocalizedString("AltServer Running", comment: "")
-                content.body = NSLocalizedString("AltServer runs in the background as a menu bar app listening for AltStore.", comment: "")
+                content.title = NSLocalizedString("SideServer Running", comment: "")
+                content.body = NSLocalizedString("SideServer runs in the background as a menu bar app listening for SideStore.", comment: "")
                 
                 let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
                 UNUserNotificationCenter.current().add(request)
