@@ -329,7 +329,7 @@ private extension AppDelegate {
 			logInMenuItem.action = #selector(logoutFromAppleID)
 		} catch {
 			print("Error getting stored AppleID credentials: \(error)")
-			logInMenuItem.title = "Log in..."
+			logInMenuItem.title = "Save Apple ID Login..."
 			logInMenuItem.action = #selector(loginToAppleID)
 		}
 	}
