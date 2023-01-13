@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let feedURL: String  = Bundle.main.infoDictionary!["SUFeedURL"]! as! String
         #endif
         
-        SUUpdater.shared().feedURL = URL(string: feedURL)
+        //SUUpdater.shared().feedURL = URL(string: feedURL)
 
         let item = NSStatusBar.system.statusItem(withLength: -1)
         item.menu = self.appMenu
@@ -329,7 +329,7 @@ private extension AppDelegate {
 			logInMenuItem.action = #selector(logoutFromAppleID)
 		} catch {
 			print("Error getting stored AppleID credentials: \(error)")
-			logInMenuItem.title = "Save Apple ID Login..."
+			logInMenuItem.title = "Save Apple ID to Keychain..."
 			logInMenuItem.action = #selector(loginToAppleID)
 		}
 	}
