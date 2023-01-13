@@ -14,7 +14,7 @@ import AltSign
 import LaunchAtLogin
 import Sparkle
 
-private let altstoreAppURL = URL(string: "https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.ipa")!
+private let altstoreAppURL = URL(string: "https://github.com/SideStore/SideStore/releases/latest/download/SideStore.ipa")!
 
 extension ALTDevice: MenuDisplayable {}
 
