@@ -325,12 +325,14 @@ private extension AppDelegate {
 	private func setupLoginMenuItem() {
 		do {
 			let email = try Keychain.shared.getValue(for: .appleIDEmail)
+            logInMenuItem.isHidden = false            
 			logInMenuItem.title = "Log out (\(email))"
 			logInMenuItem.action = #selector(logoutFromAppleID)
 		} catch {
 			print("Error getting stored AppleID credentials: \(error)")
-			logInMenuItem.title = "Save New Apple ID to Keychain..."
-			logInMenuItem.action = #selector(loginToAppleID)
+            logInMenuItem.isHidden = true
+			//logInMenuItem.title = "Save Apple ID to Keychain..."
+			//logInMenuItem.action = #selector(loginToAppleID)
 		}
 	}
 
@@ -376,7 +378,9 @@ extension AppDelegate: NSMenuDelegate
     func menuWillOpen(_ menu: NSMenu)
     {
         guard menu == self.appMenu else { return }
-        
+
+        setupLoginMenuItem()
+
         // Clear any cached _jitAppListMenuControllers.
         self._jitAppListMenuControllers.removeAll()
 
