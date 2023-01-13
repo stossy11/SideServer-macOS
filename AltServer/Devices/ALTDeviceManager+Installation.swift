@@ -435,7 +435,7 @@ private extension ALTDeviceManager
                 
                 if let certificate = altstoreCertificate ?? certificates.first
                 {
-                    if team.type != .free
+                    /*if team.type != .free
                     {
                         DispatchQueue.main.sync {
                             let alert = NSAlert()
@@ -459,7 +459,7 @@ private extension ALTDeviceManager
                         }
                         
                         guard !isCancelled else { return completionHandler(.failure(InstallError.cancelled)) }
-                    }
+                    }*/
                     
                     ALTAppleAPI.shared.revoke(certificate, for: team, session: session) { (success, error) in
                         do
