@@ -360,7 +360,7 @@ private extension ALTDeviceManager
                 
                 // Check if there is another AltStore certificate, which means AltStore has been installed with this Apple ID before.
                 let altstoreCertificate = certificates.first { $0.machineName?.starts(with: "AltStore") == true }
-                if let previousCertificate = altstoreCertificate
+                /*if let previousCertificate = altstoreCertificate
                 {
                     if FileManager.default.fileExists(atPath: certificateFileURL.path),
                        let data = try? Data(contentsOf: certificateFileURL),
@@ -389,7 +389,7 @@ private extension ALTDeviceManager
                     }
                     
                     guard !isCancelled else { return completionHandler(.failure(InstallError.cancelled)) }
-                }
+                }*/
                 
                 func addCertificate()
                 {

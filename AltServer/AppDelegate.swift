@@ -122,7 +122,6 @@ private extension AppDelegate
     
     @objc func sideloadIPA(to device: ALTDevice)
     {
-        NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
         
         let openPanel = NSOpenPanel()
         openPanel.canChooseDirectories = false
@@ -132,6 +131,7 @@ private extension AppDelegate
             guard let fileURL = openPanel.url, response == .OK else { return }
             self.installApplication(at: fileURL, to: device)
         }
+        NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
     }
     
     func enableJIT(for app: InstalledApp, on device: ALTDevice)
@@ -329,7 +329,7 @@ private extension AppDelegate {
 			logInMenuItem.action = #selector(logoutFromAppleID)
 		} catch {
 			print("Error getting stored AppleID credentials: \(error)")
-			logInMenuItem.title = "Save Apple ID to Keychain..."
+			logInMenuItem.title = "Save New Apple ID to Keychain..."
 			logInMenuItem.action = #selector(loginToAppleID)
 		}
 	}
@@ -441,6 +441,7 @@ extension AppDelegate: NSMenuDelegate
     
     func menuDidClose(_ menu: NSMenu)
     {
+        NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
         guard menu == self.appMenu else { return }
         
         // Clearing _jitAppListMenuControllers now prevents action handler from being called.

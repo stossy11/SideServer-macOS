@@ -53,8 +53,8 @@ final class AppleIDAuthenticationAlert: NSAlert {
 
 		window.initialFirstResponder = appleIDTextField
 
-		addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
 		addButton(withTitle: NSLocalizedString("Continue", comment: ""))
+		addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
 
 		validateTextFields()
 	}
@@ -62,7 +62,8 @@ final class AppleIDAuthenticationAlert: NSAlert {
 	/// Displays the alert modally, and returns a `Bool` saying whether the user did press "Continue".
 	func display() -> Bool {
 		let result = runModal()
-		return result == .alertSecondButtonReturn
+		NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
+		return result == .alertFirstButtonReturn
 	}
 }
 
@@ -80,6 +81,6 @@ private extension AppleIDAuthenticationAlert {
 	func validateTextFields() {
 		let isAppleIDTextFieldValid = !appleIDValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
 		let isPasswordTextFieldValid = !passwordValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-		buttons.last?.isEnabled = isAppleIDTextFieldValid && isPasswordTextFieldValid
+		buttons.first?.isEnabled = isAppleIDTextFieldValid && isPasswordTextFieldValid
 	}
 }
