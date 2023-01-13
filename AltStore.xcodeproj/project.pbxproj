@@ -1083,7 +1083,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 9.9.9;
 				PRODUCT_BUNDLE_IDENTIFIER = io.SideStore.SideServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1138,7 +1138,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 9.9.9;
 				PRODUCT_BUNDLE_IDENTIFIER = io.SideStore.SideServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
