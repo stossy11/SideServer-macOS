@@ -31,3 +31,5 @@ xcuserdata
 /newrelic_agent.log
 /CodeSigning.xcconfig
 /.vscode
+AltServer/AltServer.entitlements
+AltStore.xcodeproj/project.pbxproj
