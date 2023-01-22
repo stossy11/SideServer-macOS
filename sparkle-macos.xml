@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>SideServer Changelog</title>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        
+        <item>
+            <title>Version 1.0.1</title>
+            <description><![CDATA[
+                This update fixes the following issues:
+                <ul>
+                    <li>Fixes Notarization issues with SideServer itself</li>                    
+                    <li>Using Apple IDs that contain capital letters</li>
+                    <li>Using Apple IDs that have 2FA enabled without any trusted devices</li>                    
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Thu, 14 Jul 2022 12:00:00 -0005</pubDate>
+            <enclosure url="https://github.com/SideStore/SideServer-macOS/releases/download/v1.0.1/SideServer.dmg" sparkle:version="15" sparkle:shortVersionString="1.0.1" length="6374018" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.14.4</sparkle:minimumSystemVersion>
+        </item>
+        
+        <item>
+            <title>Version 1.0</title>
+            <description><![CDATA[
+                <ul>
+                    <lh><b>New</b></lh>
+                    <li>Apple ID Log in / Log Out (saves credentials in keychain)</li>    
+                    <li>Remove depency on Mail plugin</li>                                        
+                    <li>Enable Just-in-Time (JIT) compilation for sideloaded apps with "Enable JIT" menu option</li>
+                    <li>Sideload apps (.ipa's) directly to iOS devices without installing SideStore first*</li>
+                    <li>Install SideStore onto multiple iOS devices using the same Apple ID</li>
+                </ul>
+                <ul>
+                    <lh><b>Improved</b></lh>
+                    <li>Added “…” to menu items that require additional user input to match macOS HIG</li>
+                    <li>Prefers paid teams (organization or individual) over free teams if there are multiple Apple Developer teams associated with your Apple ID</li>
+                    <li>Revokes the previous iOS Development certificate created by AltStore (if one exists) instead of revoking a random one</li>
+                    <li>Improved various error messages</li>
+                </ul>
+                <ul>
+                    <lh><b>Fixed</b></lh>
+                    <li>Fix installing with correct app group.</li>
+                </ul>
+                *Hold Option to make the "Sideload .ipa…" menu option appear
+            ]]>
+            </description>
+            <pubDate>Tue, 03 May 2022 10:30:00 -0007</pubDate>
+            <enclosure url="https://github.com/SideStore/SideServer-macOS/releases/download/v1.0/SideServer.dmg" sparkle:version="10" sparkle:shortVersionString="1.0" length="6365415" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.14.4</sparkle:minimumSystemVersion>
+        </item>
+    </channel>
+</rss>

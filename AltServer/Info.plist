@@ -35,6 +35,6 @@
 	<key>SUFeedURL</key>
 	<string>https://altstore.io/altserver/sparkle-macos.xml</string>
 	<key>SUFeedURL-Staging</key>
-	<string>https://altstore.io/altserver/sparkle-macos-staging.xml</string>
+	<string>https://altstore.io/altserver/sparkle-macos.xml</string>
 </dict>
 </plist>
