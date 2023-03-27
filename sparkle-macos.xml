@@ -6,6 +6,37 @@
         <language>en</language>
         
         <item>
+            <title>Version 1.0.3</title>
+            <description><![CDATA[
+                This update fixes the following issues:
+                <ul>
+                    <li>Added a manual "Check for update..." menu bar item for users to check themselves if there is a new update</li>                    
+                    <li>Fixed "updating SideServer" bug. Now checks if it can be updated properly</li>  
+                    <li>Notarized app</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Thu, 14 Jul 2022 12:00:00 -0005</pubDate>
+            <enclosure url="https://github.com/SideStore/SideServer-macOS/releases/download/v1.0.3/SideServer.dmg" sparkle:version="15" sparkle:shortVersionString="1.0.1" length="6374018" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.14.4</sparkle:minimumSystemVersion>
+        </item>        
+
+        <item>
+            <title>Version 1.0.2</title>
+            <description><![CDATA[
+                This update fixes the following issues:
+                <ul>
+                    <li>Added a manual "Check for update..." menu bar item for users to check themselves if there is a new update</li>                    
+                    <li>Fixed "updating SideServer" bug. Now checks if it can be updated properly</li>                 
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Thu, 14 Jul 2022 12:00:00 -0005</pubDate>
+            <enclosure url="https://github.com/SideStore/SideServer-macOS/releases/download/v1.0.2/SideServer.dmg" sparkle:version="15" sparkle:shortVersionString="1.0.1" length="6374018" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.14.4</sparkle:minimumSystemVersion>
+        </item>        
+        
+        <item>
             <title>Version 1.0.1</title>
             <description><![CDATA[
                 This update fixes the following issues:
