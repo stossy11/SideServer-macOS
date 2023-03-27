@@ -35,6 +35,12 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Check for Update..." id="Tnq-gD-Eic" userLabel="Check for Updates">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="Arf-IC-5eb" id="7JG-du-nr4"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Install SideStore…" id="MJ8-Lt-SSV">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -79,6 +85,7 @@
                                         <menuItem title="Log in" id="k7w-cA-c4B">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="mhj-D5-Ycy"/>
                                         <menuItem title="Quit SideServer" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
