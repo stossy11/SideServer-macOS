@@ -76,18 +76,9 @@
                                         <menuItem title="Launch at Login" id="IyR-FQ-upe" userLabel="Launch At Login">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <!-- <menuItem isSeparatorItem="YES" id="mVM-Nm-Zi9"/> -->
                                         <menuItem title="Log in" id="k7w-cA-c4B">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <!-- <menuItem isSeparatorItem="YES" id="mhj-D5-Ycy"/>
-                                        <menuItem title="Check for Updates..." id="Tnq-gD-Eic" userLabel="Check for Updates">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="checkForUpdates:" target="Arf-IC-5eb" id="7JG-du-nr4"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="hmG-xg-qgm"/> -->
                                         <menuItem title="Quit SideServer" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
