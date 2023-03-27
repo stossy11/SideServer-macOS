@@ -6,6 +6,22 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.5</title>
+            <description><![CDATA[
+                This update fixes the following issues:
+                <ul>
+                    <li>Added a manual "Check for update..." menu bar item for users to check themselves if there is a new update</li>                    
+                    <li>Fixed "updating SideServer" bug. Now checks if it can be updated properly</li>  
+                    <li>Notarized app</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Thu, 27 Mar 2023 12:10:00 -0005</pubDate>
+            <enclosure url="https://github.com/SideStore/SideServer-macOS/releases/download/v1.0.4/SideServer.dmg" sparkle:version="105" sparkle:shortVersionString="1.0.5" length="9862026" type="application/octet-stream"/>
+            <sparkle:minimumSystemVersion>10.14.4</sparkle:minimumSystemVersion>
+        </item>  
+
+        <item>
             <title>Version 1.0.4</title>
             <description><![CDATA[
                 This update fixes the following issues:
