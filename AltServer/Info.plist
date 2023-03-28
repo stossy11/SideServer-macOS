@@ -36,5 +36,7 @@
 	<string>https://github.com/SideStore/SideServer-macOS/raw/develop/sparkle-macos.xml</string>
 	<key>SUFeedURL-Staging</key>
 	<string>https://github.com/SideStore/SideServer-macOS/raw/develop/sparkle-macos.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>DEf5AVVLBx5biDINRZL5aArGLi9vh37lOzWPTvVuXW0=</string>
 </dict>
 </plist>
