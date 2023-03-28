@@ -82,7 +82,7 @@
                                         <menuItem title="Launch at Login" id="IyR-FQ-upe" userLabel="Launch At Login">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Log in" id="k7w-cA-c4B">
+                                        <menuItem title="Apple ID Login..." id="k7w-cA-c4B">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="mhj-D5-Ycy"/>

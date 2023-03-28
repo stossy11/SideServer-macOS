@@ -323,12 +323,15 @@ private extension AppDelegate
 
 private extension AppDelegate {
 	private func setupLoginMenuItem() {
+        logInMenuItem.isEnabled = true 
 		do {
 			let email = try Keychain.shared.getValue(for: .appleIDEmail)
-            logInMenuItem.isHidden = false            
+            //logInMenuItem.isHidden = false            
 			logInMenuItem.title = "Log out (\(email))"
 			logInMenuItem.action = #selector(logoutFromAppleID)
 		} catch {
+            //logInMenuItem.isHidden = false 
+            logInMenuItem.action = #selector(loginToAppleID)
 			print("Error getting stored AppleID credentials: \(error)")
 		}
 	}
