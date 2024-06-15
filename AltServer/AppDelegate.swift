@@ -152,7 +152,7 @@ private extension AppDelegate
                 }
             }
         }
-        
+        print(device.osVersion)
         ALTDeviceManager.shared.prepare(device) { (result) in
             switch result
             {
